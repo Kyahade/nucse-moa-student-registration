@@ -5,7 +5,7 @@ export default function EmailPreviewPage() {
   const email = createRegistrationEmail({
     studentEmail: "student@students.nu-moa.edu.ph",
     referenceNumber: "NUREG-2026-00001",
-    registeredAt: new Date(),
+    registeredAt: new Date("2026-11-23T00:00:00.000Z"),
     appUrl: "http://localhost:3000",
   });
 
