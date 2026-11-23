@@ -44,27 +44,27 @@ export type VotingParticipationMinAggregateOutputType = {
   id: number | null
   voterId: number | null
   electionId: number | null
-  ballotId: number | null
   startedAt: Date | null
   submittedAt: Date | null
+  ballotId: number | null
 }
 
 export type VotingParticipationMaxAggregateOutputType = {
   id: number | null
   voterId: number | null
   electionId: number | null
-  ballotId: number | null
   startedAt: Date | null
   submittedAt: Date | null
+  ballotId: number | null
 }
 
 export type VotingParticipationCountAggregateOutputType = {
   id: number
   voterId: number
   electionId: number
-  ballotId: number
   startedAt: number
   submittedAt: number
+  ballotId: number
   _all: number
 }
 
@@ -87,27 +87,27 @@ export type VotingParticipationMinAggregateInputType = {
   id?: true
   voterId?: true
   electionId?: true
-  ballotId?: true
   startedAt?: true
   submittedAt?: true
+  ballotId?: true
 }
 
 export type VotingParticipationMaxAggregateInputType = {
   id?: true
   voterId?: true
   electionId?: true
-  ballotId?: true
   startedAt?: true
   submittedAt?: true
+  ballotId?: true
 }
 
 export type VotingParticipationCountAggregateInputType = {
   id?: true
   voterId?: true
   electionId?: true
-  ballotId?: true
   startedAt?: true
   submittedAt?: true
+  ballotId?: true
   _all?: true
 }
 
@@ -201,9 +201,9 @@ export type VotingParticipationGroupByOutputType = {
   id: number
   voterId: number
   electionId: number
-  ballotId: number | null
   startedAt: Date
   submittedAt: Date | null
+  ballotId: number | null
   _count: VotingParticipationCountAggregateOutputType | null
   _avg: VotingParticipationAvgAggregateOutputType | null
   _sum: VotingParticipationSumAggregateOutputType | null
@@ -233,24 +233,24 @@ export type VotingParticipationWhereInput = {
   id?: Prisma.IntFilter<"VotingParticipation"> | number
   voterId?: Prisma.IntFilter<"VotingParticipation"> | number
   electionId?: Prisma.IntFilter<"VotingParticipation"> | number
-  ballotId?: Prisma.IntNullableFilter<"VotingParticipation"> | number | null
   startedAt?: Prisma.DateTimeFilter<"VotingParticipation"> | Date | string
   submittedAt?: Prisma.DateTimeNullableFilter<"VotingParticipation"> | Date | string | null
-  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
-  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
+  ballotId?: Prisma.IntNullableFilter<"VotingParticipation"> | number | null
   ballot?: Prisma.XOR<Prisma.BallotNullableScalarRelationFilter, Prisma.BallotWhereInput> | null
+  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
+  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
 }
 
 export type VotingParticipationOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   voterId?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  ballotId?: Prisma.SortOrderInput | Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  voter?: Prisma.VoterOrderByWithRelationInput
-  election?: Prisma.ElectionOrderByWithRelationInput
+  ballotId?: Prisma.SortOrderInput | Prisma.SortOrder
   ballot?: Prisma.BallotOrderByWithRelationInput
+  election?: Prisma.ElectionOrderByWithRelationInput
+  voter?: Prisma.VoterOrderByWithRelationInput
 }
 
 export type VotingParticipationWhereUniqueInput = Prisma.AtLeast<{
@@ -264,18 +264,18 @@ export type VotingParticipationWhereUniqueInput = Prisma.AtLeast<{
   electionId?: Prisma.IntFilter<"VotingParticipation"> | number
   startedAt?: Prisma.DateTimeFilter<"VotingParticipation"> | Date | string
   submittedAt?: Prisma.DateTimeNullableFilter<"VotingParticipation"> | Date | string | null
-  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
-  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
   ballot?: Prisma.XOR<Prisma.BallotNullableScalarRelationFilter, Prisma.BallotWhereInput> | null
+  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
+  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
 }, "id" | "ballotId" | "voterId_electionId">
 
 export type VotingParticipationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   voterId?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  ballotId?: Prisma.SortOrderInput | Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  ballotId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.VotingParticipationCountOrderByAggregateInput
   _avg?: Prisma.VotingParticipationAvgOrderByAggregateInput
   _max?: Prisma.VotingParticipationMaxOrderByAggregateInput
@@ -290,52 +290,52 @@ export type VotingParticipationScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"VotingParticipation"> | number
   voterId?: Prisma.IntWithAggregatesFilter<"VotingParticipation"> | number
   electionId?: Prisma.IntWithAggregatesFilter<"VotingParticipation"> | number
-  ballotId?: Prisma.IntNullableWithAggregatesFilter<"VotingParticipation"> | number | null
   startedAt?: Prisma.DateTimeWithAggregatesFilter<"VotingParticipation"> | Date | string
   submittedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"VotingParticipation"> | Date | string | null
+  ballotId?: Prisma.IntNullableWithAggregatesFilter<"VotingParticipation"> | number | null
 }
 
 export type VotingParticipationCreateInput = {
   startedAt?: Date | string
   submittedAt?: Date | string | null
-  voter: Prisma.VoterCreateNestedOneWithoutVotingParticipationsInput
-  election: Prisma.ElectionCreateNestedOneWithoutVotingParticipationsInput
   ballot?: Prisma.BallotCreateNestedOneWithoutParticipationInput
+  election: Prisma.ElectionCreateNestedOneWithoutVotingParticipationsInput
+  voter: Prisma.VoterCreateNestedOneWithoutVotingParticipationsInput
 }
 
 export type VotingParticipationUncheckedCreateInput = {
   id?: number
   voterId: number
   electionId: number
-  ballotId?: number | null
   startedAt?: Date | string
   submittedAt?: Date | string | null
+  ballotId?: number | null
 }
 
 export type VotingParticipationUpdateInput = {
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  voter?: Prisma.VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput
-  election?: Prisma.ElectionUpdateOneRequiredWithoutVotingParticipationsNestedInput
   ballot?: Prisma.BallotUpdateOneWithoutParticipationNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutVotingParticipationsNestedInput
+  voter?: Prisma.VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput
 }
 
 export type VotingParticipationUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   voterId?: Prisma.IntFieldUpdateOperationsInput | number
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type VotingParticipationCreateManyInput = {
   id?: number
   voterId: number
   electionId: number
-  ballotId?: number | null
   startedAt?: Date | string
   submittedAt?: Date | string | null
+  ballotId?: number | null
 }
 
 export type VotingParticipationUpdateManyMutationInput = {
@@ -347,9 +347,9 @@ export type VotingParticipationUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   voterId?: Prisma.IntFieldUpdateOperationsInput | number
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type VotingParticipationListRelationFilter = {
@@ -376,9 +376,9 @@ export type VotingParticipationCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   voterId?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  ballotId?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
+  ballotId?: Prisma.SortOrder
 }
 
 export type VotingParticipationAvgOrderByAggregateInput = {
@@ -392,18 +392,18 @@ export type VotingParticipationMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   voterId?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  ballotId?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
+  ballotId?: Prisma.SortOrder
 }
 
 export type VotingParticipationMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   voterId?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  ballotId?: Prisma.SortOrder
   startedAt?: Prisma.SortOrder
   submittedAt?: Prisma.SortOrder
+  ballotId?: Prisma.SortOrder
 }
 
 export type VotingParticipationSumOrderByAggregateInput = {
@@ -536,16 +536,16 @@ export type NullableDateTimeFieldUpdateOperationsInput = {
 export type VotingParticipationCreateWithoutElectionInput = {
   startedAt?: Date | string
   submittedAt?: Date | string | null
-  voter: Prisma.VoterCreateNestedOneWithoutVotingParticipationsInput
   ballot?: Prisma.BallotCreateNestedOneWithoutParticipationInput
+  voter: Prisma.VoterCreateNestedOneWithoutVotingParticipationsInput
 }
 
 export type VotingParticipationUncheckedCreateWithoutElectionInput = {
   id?: number
   voterId: number
-  ballotId?: number | null
   startedAt?: Date | string
   submittedAt?: Date | string | null
+  ballotId?: number | null
 }
 
 export type VotingParticipationCreateOrConnectWithoutElectionInput = {
@@ -581,24 +581,24 @@ export type VotingParticipationScalarWhereInput = {
   id?: Prisma.IntFilter<"VotingParticipation"> | number
   voterId?: Prisma.IntFilter<"VotingParticipation"> | number
   electionId?: Prisma.IntFilter<"VotingParticipation"> | number
-  ballotId?: Prisma.IntNullableFilter<"VotingParticipation"> | number | null
   startedAt?: Prisma.DateTimeFilter<"VotingParticipation"> | Date | string
   submittedAt?: Prisma.DateTimeNullableFilter<"VotingParticipation"> | Date | string | null
+  ballotId?: Prisma.IntNullableFilter<"VotingParticipation"> | number | null
 }
 
 export type VotingParticipationCreateWithoutVoterInput = {
   startedAt?: Date | string
   submittedAt?: Date | string | null
-  election: Prisma.ElectionCreateNestedOneWithoutVotingParticipationsInput
   ballot?: Prisma.BallotCreateNestedOneWithoutParticipationInput
+  election: Prisma.ElectionCreateNestedOneWithoutVotingParticipationsInput
 }
 
 export type VotingParticipationUncheckedCreateWithoutVoterInput = {
   id?: number
   electionId: number
-  ballotId?: number | null
   startedAt?: Date | string
   submittedAt?: Date | string | null
+  ballotId?: number | null
 }
 
 export type VotingParticipationCreateOrConnectWithoutVoterInput = {
@@ -630,8 +630,8 @@ export type VotingParticipationUpdateManyWithWhereWithoutVoterInput = {
 export type VotingParticipationCreateWithoutBallotInput = {
   startedAt?: Date | string
   submittedAt?: Date | string | null
-  voter: Prisma.VoterCreateNestedOneWithoutVotingParticipationsInput
   election: Prisma.ElectionCreateNestedOneWithoutVotingParticipationsInput
+  voter: Prisma.VoterCreateNestedOneWithoutVotingParticipationsInput
 }
 
 export type VotingParticipationUncheckedCreateWithoutBallotInput = {
@@ -661,8 +661,8 @@ export type VotingParticipationUpdateToOneWithWhereWithoutBallotInput = {
 export type VotingParticipationUpdateWithoutBallotInput = {
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  voter?: Prisma.VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput
   election?: Prisma.ElectionUpdateOneRequiredWithoutVotingParticipationsNestedInput
+  voter?: Prisma.VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput
 }
 
 export type VotingParticipationUncheckedUpdateWithoutBallotInput = {
@@ -676,63 +676,63 @@ export type VotingParticipationUncheckedUpdateWithoutBallotInput = {
 export type VotingParticipationCreateManyElectionInput = {
   id?: number
   voterId: number
-  ballotId?: number | null
   startedAt?: Date | string
   submittedAt?: Date | string | null
+  ballotId?: number | null
 }
 
 export type VotingParticipationUpdateWithoutElectionInput = {
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  voter?: Prisma.VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput
   ballot?: Prisma.BallotUpdateOneWithoutParticipationNestedInput
+  voter?: Prisma.VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput
 }
 
 export type VotingParticipationUncheckedUpdateWithoutElectionInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   voterId?: Prisma.IntFieldUpdateOperationsInput | number
-  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type VotingParticipationUncheckedUpdateManyWithoutElectionInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   voterId?: Prisma.IntFieldUpdateOperationsInput | number
-  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type VotingParticipationCreateManyVoterInput = {
   id?: number
   electionId: number
-  ballotId?: number | null
   startedAt?: Date | string
   submittedAt?: Date | string | null
+  ballotId?: number | null
 }
 
 export type VotingParticipationUpdateWithoutVoterInput = {
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  election?: Prisma.ElectionUpdateOneRequiredWithoutVotingParticipationsNestedInput
   ballot?: Prisma.BallotUpdateOneWithoutParticipationNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutVotingParticipationsNestedInput
 }
 
 export type VotingParticipationUncheckedUpdateWithoutVoterInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type VotingParticipationUncheckedUpdateManyWithoutVoterInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   startedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  ballotId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 
@@ -741,78 +741,78 @@ export type VotingParticipationSelect<ExtArgs extends runtime.Types.Extensions.I
   id?: boolean
   voterId?: boolean
   electionId?: boolean
-  ballotId?: boolean
   startedAt?: boolean
   submittedAt?: boolean
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  ballotId?: boolean
   ballot?: boolean | Prisma.VotingParticipation$ballotArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["votingParticipation"]>
 
 export type VotingParticipationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   voterId?: boolean
   electionId?: boolean
-  ballotId?: boolean
   startedAt?: boolean
   submittedAt?: boolean
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  ballotId?: boolean
   ballot?: boolean | Prisma.VotingParticipation$ballotArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["votingParticipation"]>
 
 export type VotingParticipationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   voterId?: boolean
   electionId?: boolean
-  ballotId?: boolean
   startedAt?: boolean
   submittedAt?: boolean
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  ballotId?: boolean
   ballot?: boolean | Prisma.VotingParticipation$ballotArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["votingParticipation"]>
 
 export type VotingParticipationSelectScalar = {
   id?: boolean
   voterId?: boolean
   electionId?: boolean
-  ballotId?: boolean
   startedAt?: boolean
   submittedAt?: boolean
+  ballotId?: boolean
 }
 
-export type VotingParticipationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "voterId" | "electionId" | "ballotId" | "startedAt" | "submittedAt", ExtArgs["result"]["votingParticipation"]>
+export type VotingParticipationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "voterId" | "electionId" | "startedAt" | "submittedAt" | "ballotId", ExtArgs["result"]["votingParticipation"]>
 export type VotingParticipationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
   ballot?: boolean | Prisma.VotingParticipation$ballotArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }
 export type VotingParticipationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
   ballot?: boolean | Prisma.VotingParticipation$ballotArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }
 export type VotingParticipationIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
   ballot?: boolean | Prisma.VotingParticipation$ballotArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }
 
 export type $VotingParticipationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "VotingParticipation"
   objects: {
-    voter: Prisma.$VoterPayload<ExtArgs>
-    election: Prisma.$ElectionPayload<ExtArgs>
     ballot: Prisma.$BallotPayload<ExtArgs> | null
+    election: Prisma.$ElectionPayload<ExtArgs>
+    voter: Prisma.$VoterPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     voterId: number
     electionId: number
-    ballotId: number | null
     startedAt: Date
     submittedAt: Date | null
+    ballotId: number | null
   }, ExtArgs["result"]["votingParticipation"]>
   composites: {}
 }
@@ -1207,9 +1207,9 @@ readonly fields: VotingParticipationFieldRefs;
  */
 export interface Prisma__VotingParticipationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  voter<T extends Prisma.VoterDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.VoterDefaultArgs<ExtArgs>>): Prisma.Prisma__VoterClient<runtime.Types.Result.GetResult<Prisma.$VoterPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  election<T extends Prisma.ElectionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionDefaultArgs<ExtArgs>>): Prisma.Prisma__ElectionClient<runtime.Types.Result.GetResult<Prisma.$ElectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   ballot<T extends Prisma.VotingParticipation$ballotArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.VotingParticipation$ballotArgs<ExtArgs>>): Prisma.Prisma__BallotClient<runtime.Types.Result.GetResult<Prisma.$BallotPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  election<T extends Prisma.ElectionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionDefaultArgs<ExtArgs>>): Prisma.Prisma__ElectionClient<runtime.Types.Result.GetResult<Prisma.$ElectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  voter<T extends Prisma.VoterDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.VoterDefaultArgs<ExtArgs>>): Prisma.Prisma__VoterClient<runtime.Types.Result.GetResult<Prisma.$VoterPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1242,9 +1242,9 @@ export interface VotingParticipationFieldRefs {
   readonly id: Prisma.FieldRef<"VotingParticipation", 'Int'>
   readonly voterId: Prisma.FieldRef<"VotingParticipation", 'Int'>
   readonly electionId: Prisma.FieldRef<"VotingParticipation", 'Int'>
-  readonly ballotId: Prisma.FieldRef<"VotingParticipation", 'Int'>
   readonly startedAt: Prisma.FieldRef<"VotingParticipation", 'DateTime'>
   readonly submittedAt: Prisma.FieldRef<"VotingParticipation", 'DateTime'>
+  readonly ballotId: Prisma.FieldRef<"VotingParticipation", 'Int'>
 }
     
 

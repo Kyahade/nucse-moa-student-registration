@@ -42,36 +42,36 @@ export type VoterMinAggregateOutputType = {
   id: number | null
   email: string | null
   studentId: string | null
-  programId: number | null
-  yearLevel: number | null
   hasVoted: boolean | null
-  isAdmin: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
+  isAdmin: boolean | null
+  programId: number | null
+  yearLevel: number | null
 }
 
 export type VoterMaxAggregateOutputType = {
   id: number | null
   email: string | null
   studentId: string | null
-  programId: number | null
-  yearLevel: number | null
   hasVoted: boolean | null
-  isAdmin: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
+  isAdmin: boolean | null
+  programId: number | null
+  yearLevel: number | null
 }
 
 export type VoterCountAggregateOutputType = {
   id: number
   email: number
   studentId: number
-  programId: number
-  yearLevel: number
   hasVoted: number
-  isAdmin: number
   createdAt: number
   updatedAt: number
+  isAdmin: number
+  programId: number
+  yearLevel: number
   _all: number
 }
 
@@ -92,36 +92,36 @@ export type VoterMinAggregateInputType = {
   id?: true
   email?: true
   studentId?: true
-  programId?: true
-  yearLevel?: true
   hasVoted?: true
-  isAdmin?: true
   createdAt?: true
   updatedAt?: true
+  isAdmin?: true
+  programId?: true
+  yearLevel?: true
 }
 
 export type VoterMaxAggregateInputType = {
   id?: true
   email?: true
   studentId?: true
-  programId?: true
-  yearLevel?: true
   hasVoted?: true
-  isAdmin?: true
   createdAt?: true
   updatedAt?: true
+  isAdmin?: true
+  programId?: true
+  yearLevel?: true
 }
 
 export type VoterCountAggregateInputType = {
   id?: true
   email?: true
   studentId?: true
-  programId?: true
-  yearLevel?: true
   hasVoted?: true
-  isAdmin?: true
   createdAt?: true
   updatedAt?: true
+  isAdmin?: true
+  programId?: true
+  yearLevel?: true
   _all?: true
 }
 
@@ -215,12 +215,12 @@ export type VoterGroupByOutputType = {
   id: number
   email: string
   studentId: string | null
-  programId: number | null
-  yearLevel: number | null
   hasVoted: boolean
-  isAdmin: boolean
   createdAt: Date
   updatedAt: Date
+  isAdmin: boolean
+  programId: number | null
+  yearLevel: number | null
   _count: VoterCountAggregateOutputType | null
   _avg: VoterAvgAggregateOutputType | null
   _sum: VoterSumAggregateOutputType | null
@@ -250,14 +250,14 @@ export type VoterWhereInput = {
   id?: Prisma.IntFilter<"Voter"> | number
   email?: Prisma.StringFilter<"Voter"> | string
   studentId?: Prisma.StringNullableFilter<"Voter"> | string | null
-  programId?: Prisma.IntNullableFilter<"Voter"> | number | null
-  yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
   hasVoted?: Prisma.BoolFilter<"Voter"> | boolean
-  isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Voter"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Voter"> | Date | string
-  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
+  isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
+  programId?: Prisma.IntNullableFilter<"Voter"> | number | null
+  yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentListRelationFilter
+  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
   votingParticipations?: Prisma.VotingParticipationListRelationFilter
 }
 
@@ -265,14 +265,14 @@ export type VoterOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   studentId?: Prisma.SortOrderInput | Prisma.SortOrder
-  programId?: Prisma.SortOrderInput | Prisma.SortOrder
-  yearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   hasVoted?: Prisma.SortOrder
-  isAdmin?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  program?: Prisma.ProgramOrderByWithRelationInput
+  isAdmin?: Prisma.SortOrder
+  programId?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   acknowledgments?: Prisma.ElectionAcknowledgmentOrderByRelationAggregateInput
+  program?: Prisma.ProgramOrderByWithRelationInput
   votingParticipations?: Prisma.VotingParticipationOrderByRelationAggregateInput
 }
 
@@ -283,14 +283,14 @@ export type VoterWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.VoterWhereInput | Prisma.VoterWhereInput[]
   OR?: Prisma.VoterWhereInput[]
   NOT?: Prisma.VoterWhereInput | Prisma.VoterWhereInput[]
-  programId?: Prisma.IntNullableFilter<"Voter"> | number | null
-  yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
   hasVoted?: Prisma.BoolFilter<"Voter"> | boolean
-  isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Voter"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Voter"> | Date | string
-  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
+  isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
+  programId?: Prisma.IntNullableFilter<"Voter"> | number | null
+  yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentListRelationFilter
+  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
   votingParticipations?: Prisma.VotingParticipationListRelationFilter
 }, "id" | "email" | "studentId">
 
@@ -298,12 +298,12 @@ export type VoterOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   studentId?: Prisma.SortOrderInput | Prisma.SortOrder
-  programId?: Prisma.SortOrderInput | Prisma.SortOrder
-  yearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   hasVoted?: Prisma.SortOrder
-  isAdmin?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  isAdmin?: Prisma.SortOrder
+  programId?: Prisma.SortOrderInput | Prisma.SortOrder
+  yearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.VoterCountOrderByAggregateInput
   _avg?: Prisma.VoterAvgOrderByAggregateInput
   _max?: Prisma.VoterMaxOrderByAggregateInput
@@ -318,24 +318,24 @@ export type VoterScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Voter"> | number
   email?: Prisma.StringWithAggregatesFilter<"Voter"> | string
   studentId?: Prisma.StringNullableWithAggregatesFilter<"Voter"> | string | null
-  programId?: Prisma.IntNullableWithAggregatesFilter<"Voter"> | number | null
-  yearLevel?: Prisma.IntNullableWithAggregatesFilter<"Voter"> | number | null
   hasVoted?: Prisma.BoolWithAggregatesFilter<"Voter"> | boolean
-  isAdmin?: Prisma.BoolWithAggregatesFilter<"Voter"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Voter"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Voter"> | Date | string
+  isAdmin?: Prisma.BoolWithAggregatesFilter<"Voter"> | boolean
+  programId?: Prisma.IntNullableWithAggregatesFilter<"Voter"> | number | null
+  yearLevel?: Prisma.IntNullableWithAggregatesFilter<"Voter"> | number | null
 }
 
 export type VoterCreateInput = {
   email: string
   studentId?: string | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
+  isAdmin?: boolean
+  yearLevel?: number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutVoterInput
+  program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutVoterInput
 }
 
@@ -343,12 +343,12 @@ export type VoterUncheckedCreateInput = {
   id?: number
   email: string
   studentId?: string | null
-  programId?: number | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  programId?: number | null
+  yearLevel?: number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutVoterInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutVoterInput
 }
@@ -356,13 +356,13 @@ export type VoterUncheckedCreateInput = {
 export type VoterUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutVoterNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutVoterNestedInput
 }
 
@@ -370,12 +370,12 @@ export type VoterUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutVoterNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutVoterNestedInput
 }
@@ -384,34 +384,34 @@ export type VoterCreateManyInput = {
   id?: number
   email: string
   studentId?: string | null
-  programId?: number | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  programId?: number | null
+  yearLevel?: number | null
 }
 
 export type VoterUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type VoterUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type VoterListRelationFilter = {
@@ -428,12 +428,12 @@ export type VoterCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
-  programId?: Prisma.SortOrder
-  yearLevel?: Prisma.SortOrder
   hasVoted?: Prisma.SortOrder
-  isAdmin?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  isAdmin?: Prisma.SortOrder
+  programId?: Prisma.SortOrder
+  yearLevel?: Prisma.SortOrder
 }
 
 export type VoterAvgOrderByAggregateInput = {
@@ -446,24 +446,24 @@ export type VoterMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
-  programId?: Prisma.SortOrder
-  yearLevel?: Prisma.SortOrder
   hasVoted?: Prisma.SortOrder
-  isAdmin?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  isAdmin?: Prisma.SortOrder
+  programId?: Prisma.SortOrder
+  yearLevel?: Prisma.SortOrder
 }
 
 export type VoterMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   studentId?: Prisma.SortOrder
-  programId?: Prisma.SortOrder
-  yearLevel?: Prisma.SortOrder
   hasVoted?: Prisma.SortOrder
-  isAdmin?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  isAdmin?: Prisma.SortOrder
+  programId?: Prisma.SortOrder
+  yearLevel?: Prisma.SortOrder
 }
 
 export type VoterSumOrderByAggregateInput = {
@@ -550,11 +550,11 @@ export type VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput = {
 export type VoterCreateWithoutProgramInput = {
   email: string
   studentId?: string | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  yearLevel?: number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutVoterInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutVoterInput
 }
@@ -563,11 +563,11 @@ export type VoterUncheckedCreateWithoutProgramInput = {
   id?: number
   email: string
   studentId?: string | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  yearLevel?: number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutVoterInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutVoterInput
 }
@@ -605,22 +605,22 @@ export type VoterScalarWhereInput = {
   id?: Prisma.IntFilter<"Voter"> | number
   email?: Prisma.StringFilter<"Voter"> | string
   studentId?: Prisma.StringNullableFilter<"Voter"> | string | null
-  programId?: Prisma.IntNullableFilter<"Voter"> | number | null
-  yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
   hasVoted?: Prisma.BoolFilter<"Voter"> | boolean
-  isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Voter"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Voter"> | Date | string
+  isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
+  programId?: Prisma.IntNullableFilter<"Voter"> | number | null
+  yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
 }
 
 export type VoterCreateWithoutAcknowledgmentsInput = {
   email: string
   studentId?: string | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  yearLevel?: number | null
   program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutVoterInput
 }
@@ -629,12 +629,12 @@ export type VoterUncheckedCreateWithoutAcknowledgmentsInput = {
   id?: number
   email: string
   studentId?: string | null
-  programId?: number | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  programId?: number | null
+  yearLevel?: number | null
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutVoterInput
 }
 
@@ -657,11 +657,11 @@ export type VoterUpdateToOneWithWhereWithoutAcknowledgmentsInput = {
 export type VoterUpdateWithoutAcknowledgmentsInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutVoterNestedInput
 }
@@ -670,37 +670,37 @@ export type VoterUncheckedUpdateWithoutAcknowledgmentsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutVoterNestedInput
 }
 
 export type VoterCreateWithoutVotingParticipationsInput = {
   email: string
   studentId?: string | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
+  isAdmin?: boolean
+  yearLevel?: number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutVoterInput
+  program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
 }
 
 export type VoterUncheckedCreateWithoutVotingParticipationsInput = {
   id?: number
   email: string
   studentId?: string | null
-  programId?: number | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  programId?: number | null
+  yearLevel?: number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutVoterInput
 }
 
@@ -723,25 +723,25 @@ export type VoterUpdateToOneWithWhereWithoutVotingParticipationsInput = {
 export type VoterUpdateWithoutVotingParticipationsInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutVoterNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
 }
 
 export type VoterUncheckedUpdateWithoutVotingParticipationsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutVoterNestedInput
 }
 
@@ -749,21 +749,21 @@ export type VoterCreateManyProgramInput = {
   id?: number
   email: string
   studentId?: string | null
-  yearLevel?: number | null
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  isAdmin?: boolean
+  yearLevel?: number | null
 }
 
 export type VoterUpdateWithoutProgramInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutVoterNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutVoterNestedInput
 }
@@ -772,11 +772,11 @@ export type VoterUncheckedUpdateWithoutProgramInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutVoterNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutVoterNestedInput
 }
@@ -785,11 +785,11 @@ export type VoterUncheckedUpdateManyWithoutProgramInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 
@@ -836,14 +836,14 @@ export type VoterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   id?: boolean
   email?: boolean
   studentId?: boolean
-  programId?: boolean
-  yearLevel?: boolean
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  program?: boolean | Prisma.Voter$programArgs<ExtArgs>
+  isAdmin?: boolean
+  programId?: boolean
+  yearLevel?: boolean
   acknowledgments?: boolean | Prisma.Voter$acknowledgmentsArgs<ExtArgs>
+  program?: boolean | Prisma.Voter$programArgs<ExtArgs>
   votingParticipations?: boolean | Prisma.Voter$votingParticipationsArgs<ExtArgs>
   _count?: boolean | Prisma.VoterCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["voter"]>
@@ -852,12 +852,12 @@ export type VoterSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   email?: boolean
   studentId?: boolean
-  programId?: boolean
-  yearLevel?: boolean
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  isAdmin?: boolean
+  programId?: boolean
+  yearLevel?: boolean
   program?: boolean | Prisma.Voter$programArgs<ExtArgs>
 }, ExtArgs["result"]["voter"]>
 
@@ -865,12 +865,12 @@ export type VoterSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   id?: boolean
   email?: boolean
   studentId?: boolean
-  programId?: boolean
-  yearLevel?: boolean
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  isAdmin?: boolean
+  programId?: boolean
+  yearLevel?: boolean
   program?: boolean | Prisma.Voter$programArgs<ExtArgs>
 }, ExtArgs["result"]["voter"]>
 
@@ -878,18 +878,18 @@ export type VoterSelectScalar = {
   id?: boolean
   email?: boolean
   studentId?: boolean
-  programId?: boolean
-  yearLevel?: boolean
   hasVoted?: boolean
-  isAdmin?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  isAdmin?: boolean
+  programId?: boolean
+  yearLevel?: boolean
 }
 
-export type VoterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "studentId" | "programId" | "yearLevel" | "hasVoted" | "isAdmin" | "createdAt" | "updatedAt", ExtArgs["result"]["voter"]>
+export type VoterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "studentId" | "hasVoted" | "createdAt" | "updatedAt" | "isAdmin" | "programId" | "yearLevel", ExtArgs["result"]["voter"]>
 export type VoterInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  program?: boolean | Prisma.Voter$programArgs<ExtArgs>
   acknowledgments?: boolean | Prisma.Voter$acknowledgmentsArgs<ExtArgs>
+  program?: boolean | Prisma.Voter$programArgs<ExtArgs>
   votingParticipations?: boolean | Prisma.Voter$votingParticipationsArgs<ExtArgs>
   _count?: boolean | Prisma.VoterCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -903,20 +903,20 @@ export type VoterIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type $VoterPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Voter"
   objects: {
-    program: Prisma.$ProgramPayload<ExtArgs> | null
     acknowledgments: Prisma.$ElectionAcknowledgmentPayload<ExtArgs>[]
+    program: Prisma.$ProgramPayload<ExtArgs> | null
     votingParticipations: Prisma.$VotingParticipationPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     email: string
     studentId: string | null
-    programId: number | null
-    yearLevel: number | null
     hasVoted: boolean
-    isAdmin: boolean
     createdAt: Date
     updatedAt: Date
+    isAdmin: boolean
+    programId: number | null
+    yearLevel: number | null
   }, ExtArgs["result"]["voter"]>
   composites: {}
 }
@@ -1311,8 +1311,8 @@ readonly fields: VoterFieldRefs;
  */
 export interface Prisma__VoterClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  program<T extends Prisma.Voter$programArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$programArgs<ExtArgs>>): Prisma.Prisma__ProgramClient<runtime.Types.Result.GetResult<Prisma.$ProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   acknowledgments<T extends Prisma.Voter$acknowledgmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$acknowledgmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionAcknowledgmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  program<T extends Prisma.Voter$programArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$programArgs<ExtArgs>>): Prisma.Prisma__ProgramClient<runtime.Types.Result.GetResult<Prisma.$ProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   votingParticipations<T extends Prisma.Voter$votingParticipationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$votingParticipationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$VotingParticipationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1346,12 +1346,12 @@ export interface VoterFieldRefs {
   readonly id: Prisma.FieldRef<"Voter", 'Int'>
   readonly email: Prisma.FieldRef<"Voter", 'String'>
   readonly studentId: Prisma.FieldRef<"Voter", 'String'>
-  readonly programId: Prisma.FieldRef<"Voter", 'Int'>
-  readonly yearLevel: Prisma.FieldRef<"Voter", 'Int'>
   readonly hasVoted: Prisma.FieldRef<"Voter", 'Boolean'>
-  readonly isAdmin: Prisma.FieldRef<"Voter", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Voter", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Voter", 'DateTime'>
+  readonly isAdmin: Prisma.FieldRef<"Voter", 'Boolean'>
+  readonly programId: Prisma.FieldRef<"Voter", 'Int'>
+  readonly yearLevel: Prisma.FieldRef<"Voter", 'Int'>
 }
     
 
@@ -1753,25 +1753,6 @@ export type VoterDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
- * Voter.program
- */
-export type Voter$programArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Program
-   */
-  select?: Prisma.ProgramSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Program
-   */
-  omit?: Prisma.ProgramOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ProgramInclude<ExtArgs> | null
-  where?: Prisma.ProgramWhereInput
-}
-
-/**
  * Voter.acknowledgments
  */
 export type Voter$acknowledgmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1793,6 +1774,25 @@ export type Voter$acknowledgmentsArgs<ExtArgs extends runtime.Types.Extensions.I
   take?: number
   skip?: number
   distinct?: Prisma.ElectionAcknowledgmentScalarFieldEnum | Prisma.ElectionAcknowledgmentScalarFieldEnum[]
+}
+
+/**
+ * Voter.program
+ */
+export type Voter$programArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Program
+   */
+  select?: Prisma.ProgramSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Program
+   */
+  omit?: Prisma.ProgramOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProgramInclude<ExtArgs> | null
+  where?: Prisma.ProgramWhereInput
 }
 
 /**

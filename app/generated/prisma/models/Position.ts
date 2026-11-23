@@ -29,74 +29,74 @@ export type AggregatePosition = {
 export type PositionAvgAggregateOutputType = {
   id: number | null
   maxVotes: number | null
-  sortOrder: number | null
-  representativeYearLevel: number | null
   electionId: number | null
   electionBodyId: number | null
-  collegeId: number | null
   programId: number | null
+  sortOrder: number | null
+  collegeId: number | null
+  representativeYearLevel: number | null
 }
 
 export type PositionSumAggregateOutputType = {
   id: number | null
   maxVotes: number | null
-  sortOrder: number | null
-  representativeYearLevel: number | null
   electionId: number | null
   electionBodyId: number | null
-  collegeId: number | null
   programId: number | null
+  sortOrder: number | null
+  collegeId: number | null
+  representativeYearLevel: number | null
 }
 
 export type PositionMinAggregateOutputType = {
   id: number | null
   name: string | null
   maxVotes: number | null
-  type: $Enums.PositionType | null
-  scope: $Enums.PositionScope | null
-  isVisible: boolean | null
-  sortOrder: number | null
-  representativeYearLevel: number | null
   electionId: number | null
-  electionBodyId: number | null
-  collegeId: number | null
-  programId: number | null
   createdAt: Date | null
   updatedAt: Date | null
+  electionBodyId: number | null
+  isVisible: boolean | null
+  programId: number | null
+  sortOrder: number | null
+  type: $Enums.PositionType | null
+  collegeId: number | null
+  scope: $Enums.PositionScope | null
+  representativeYearLevel: number | null
 }
 
 export type PositionMaxAggregateOutputType = {
   id: number | null
   name: string | null
   maxVotes: number | null
-  type: $Enums.PositionType | null
-  scope: $Enums.PositionScope | null
-  isVisible: boolean | null
-  sortOrder: number | null
-  representativeYearLevel: number | null
   electionId: number | null
-  electionBodyId: number | null
-  collegeId: number | null
-  programId: number | null
   createdAt: Date | null
   updatedAt: Date | null
+  electionBodyId: number | null
+  isVisible: boolean | null
+  programId: number | null
+  sortOrder: number | null
+  type: $Enums.PositionType | null
+  collegeId: number | null
+  scope: $Enums.PositionScope | null
+  representativeYearLevel: number | null
 }
 
 export type PositionCountAggregateOutputType = {
   id: number
   name: number
   maxVotes: number
-  type: number
-  scope: number
-  isVisible: number
-  sortOrder: number
-  representativeYearLevel: number
   electionId: number
-  electionBodyId: number
-  collegeId: number
-  programId: number
   createdAt: number
   updatedAt: number
+  electionBodyId: number
+  isVisible: number
+  programId: number
+  sortOrder: number
+  type: number
+  collegeId: number
+  scope: number
+  representativeYearLevel: number
   _all: number
 }
 
@@ -104,74 +104,74 @@ export type PositionCountAggregateOutputType = {
 export type PositionAvgAggregateInputType = {
   id?: true
   maxVotes?: true
-  sortOrder?: true
-  representativeYearLevel?: true
   electionId?: true
   electionBodyId?: true
-  collegeId?: true
   programId?: true
+  sortOrder?: true
+  collegeId?: true
+  representativeYearLevel?: true
 }
 
 export type PositionSumAggregateInputType = {
   id?: true
   maxVotes?: true
-  sortOrder?: true
-  representativeYearLevel?: true
   electionId?: true
   electionBodyId?: true
-  collegeId?: true
   programId?: true
+  sortOrder?: true
+  collegeId?: true
+  representativeYearLevel?: true
 }
 
 export type PositionMinAggregateInputType = {
   id?: true
   name?: true
   maxVotes?: true
-  type?: true
-  scope?: true
-  isVisible?: true
-  sortOrder?: true
-  representativeYearLevel?: true
   electionId?: true
-  electionBodyId?: true
-  collegeId?: true
-  programId?: true
   createdAt?: true
   updatedAt?: true
+  electionBodyId?: true
+  isVisible?: true
+  programId?: true
+  sortOrder?: true
+  type?: true
+  collegeId?: true
+  scope?: true
+  representativeYearLevel?: true
 }
 
 export type PositionMaxAggregateInputType = {
   id?: true
   name?: true
   maxVotes?: true
-  type?: true
-  scope?: true
-  isVisible?: true
-  sortOrder?: true
-  representativeYearLevel?: true
   electionId?: true
-  electionBodyId?: true
-  collegeId?: true
-  programId?: true
   createdAt?: true
   updatedAt?: true
+  electionBodyId?: true
+  isVisible?: true
+  programId?: true
+  sortOrder?: true
+  type?: true
+  collegeId?: true
+  scope?: true
+  representativeYearLevel?: true
 }
 
 export type PositionCountAggregateInputType = {
   id?: true
   name?: true
   maxVotes?: true
-  type?: true
-  scope?: true
-  isVisible?: true
-  sortOrder?: true
-  representativeYearLevel?: true
   electionId?: true
-  electionBodyId?: true
-  collegeId?: true
-  programId?: true
   createdAt?: true
   updatedAt?: true
+  electionBodyId?: true
+  isVisible?: true
+  programId?: true
+  sortOrder?: true
+  type?: true
+  collegeId?: true
+  scope?: true
+  representativeYearLevel?: true
   _all?: true
 }
 
@@ -265,17 +265,17 @@ export type PositionGroupByOutputType = {
   id: number
   name: string
   maxVotes: number
-  type: $Enums.PositionType
-  scope: $Enums.PositionScope
-  isVisible: boolean
-  sortOrder: number
-  representativeYearLevel: number | null
   electionId: number
-  electionBodyId: number | null
-  collegeId: number | null
-  programId: number | null
   createdAt: Date
   updatedAt: Date
+  electionBodyId: number | null
+  isVisible: boolean
+  programId: number | null
+  sortOrder: number
+  type: $Enums.PositionType
+  collegeId: number | null
+  scope: $Enums.PositionScope
+  representativeYearLevel: number | null
   _count: PositionCountAggregateOutputType | null
   _avg: PositionAvgAggregateOutputType | null
   _sum: PositionSumAggregateOutputType | null
@@ -305,46 +305,46 @@ export type PositionWhereInput = {
   id?: Prisma.IntFilter<"Position"> | number
   name?: Prisma.StringFilter<"Position"> | string
   maxVotes?: Prisma.IntFilter<"Position"> | number
-  type?: Prisma.EnumPositionTypeFilter<"Position"> | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFilter<"Position"> | $Enums.PositionScope
-  isVisible?: Prisma.BoolFilter<"Position"> | boolean
-  sortOrder?: Prisma.IntFilter<"Position"> | number
-  representativeYearLevel?: Prisma.IntNullableFilter<"Position"> | number | null
   electionId?: Prisma.IntFilter<"Position"> | number
-  electionBodyId?: Prisma.IntNullableFilter<"Position"> | number | null
-  collegeId?: Prisma.IntNullableFilter<"Position"> | number | null
-  programId?: Prisma.IntNullableFilter<"Position"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Position"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Position"> | Date | string
-  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
-  electionBody?: Prisma.XOR<Prisma.ElectionBodyNullableScalarRelationFilter, Prisma.ElectionBodyWhereInput> | null
-  college?: Prisma.XOR<Prisma.CollegeNullableScalarRelationFilter, Prisma.CollegeWhereInput> | null
-  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
-  candidates?: Prisma.CandidateListRelationFilter
+  electionBodyId?: Prisma.IntNullableFilter<"Position"> | number | null
+  isVisible?: Prisma.BoolFilter<"Position"> | boolean
+  programId?: Prisma.IntNullableFilter<"Position"> | number | null
+  sortOrder?: Prisma.IntFilter<"Position"> | number
+  type?: Prisma.EnumPositionTypeFilter<"Position"> | $Enums.PositionType
+  collegeId?: Prisma.IntNullableFilter<"Position"> | number | null
+  scope?: Prisma.EnumPositionScopeFilter<"Position"> | $Enums.PositionScope
+  representativeYearLevel?: Prisma.IntNullableFilter<"Position"> | number | null
   ballotSelections?: Prisma.BallotSelectionListRelationFilter
+  candidates?: Prisma.CandidateListRelationFilter
+  college?: Prisma.XOR<Prisma.CollegeNullableScalarRelationFilter, Prisma.CollegeWhereInput> | null
+  electionBody?: Prisma.XOR<Prisma.ElectionBodyNullableScalarRelationFilter, Prisma.ElectionBodyWhereInput> | null
+  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
+  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
 }
 
 export type PositionOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   maxVotes?: Prisma.SortOrder
-  type?: Prisma.SortOrder
-  scope?: Prisma.SortOrder
-  isVisible?: Prisma.SortOrder
-  sortOrder?: Prisma.SortOrder
-  representativeYearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  electionBodyId?: Prisma.SortOrderInput | Prisma.SortOrder
-  collegeId?: Prisma.SortOrderInput | Prisma.SortOrder
-  programId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  election?: Prisma.ElectionOrderByWithRelationInput
-  electionBody?: Prisma.ElectionBodyOrderByWithRelationInput
-  college?: Prisma.CollegeOrderByWithRelationInput
-  program?: Prisma.ProgramOrderByWithRelationInput
-  candidates?: Prisma.CandidateOrderByRelationAggregateInput
+  electionBodyId?: Prisma.SortOrderInput | Prisma.SortOrder
+  isVisible?: Prisma.SortOrder
+  programId?: Prisma.SortOrderInput | Prisma.SortOrder
+  sortOrder?: Prisma.SortOrder
+  type?: Prisma.SortOrder
+  collegeId?: Prisma.SortOrderInput | Prisma.SortOrder
+  scope?: Prisma.SortOrder
+  representativeYearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   ballotSelections?: Prisma.BallotSelectionOrderByRelationAggregateInput
+  candidates?: Prisma.CandidateOrderByRelationAggregateInput
+  college?: Prisma.CollegeOrderByWithRelationInput
+  electionBody?: Prisma.ElectionBodyOrderByWithRelationInput
+  election?: Prisma.ElectionOrderByWithRelationInput
+  program?: Prisma.ProgramOrderByWithRelationInput
 }
 
 export type PositionWhereUniqueInput = Prisma.AtLeast<{
@@ -354,40 +354,40 @@ export type PositionWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.PositionWhereInput | Prisma.PositionWhereInput[]
   name?: Prisma.StringFilter<"Position"> | string
   maxVotes?: Prisma.IntFilter<"Position"> | number
-  type?: Prisma.EnumPositionTypeFilter<"Position"> | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFilter<"Position"> | $Enums.PositionScope
-  isVisible?: Prisma.BoolFilter<"Position"> | boolean
-  sortOrder?: Prisma.IntFilter<"Position"> | number
-  representativeYearLevel?: Prisma.IntNullableFilter<"Position"> | number | null
   electionId?: Prisma.IntFilter<"Position"> | number
-  electionBodyId?: Prisma.IntNullableFilter<"Position"> | number | null
-  collegeId?: Prisma.IntNullableFilter<"Position"> | number | null
-  programId?: Prisma.IntNullableFilter<"Position"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Position"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Position"> | Date | string
-  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
-  electionBody?: Prisma.XOR<Prisma.ElectionBodyNullableScalarRelationFilter, Prisma.ElectionBodyWhereInput> | null
-  college?: Prisma.XOR<Prisma.CollegeNullableScalarRelationFilter, Prisma.CollegeWhereInput> | null
-  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
-  candidates?: Prisma.CandidateListRelationFilter
+  electionBodyId?: Prisma.IntNullableFilter<"Position"> | number | null
+  isVisible?: Prisma.BoolFilter<"Position"> | boolean
+  programId?: Prisma.IntNullableFilter<"Position"> | number | null
+  sortOrder?: Prisma.IntFilter<"Position"> | number
+  type?: Prisma.EnumPositionTypeFilter<"Position"> | $Enums.PositionType
+  collegeId?: Prisma.IntNullableFilter<"Position"> | number | null
+  scope?: Prisma.EnumPositionScopeFilter<"Position"> | $Enums.PositionScope
+  representativeYearLevel?: Prisma.IntNullableFilter<"Position"> | number | null
   ballotSelections?: Prisma.BallotSelectionListRelationFilter
+  candidates?: Prisma.CandidateListRelationFilter
+  college?: Prisma.XOR<Prisma.CollegeNullableScalarRelationFilter, Prisma.CollegeWhereInput> | null
+  electionBody?: Prisma.XOR<Prisma.ElectionBodyNullableScalarRelationFilter, Prisma.ElectionBodyWhereInput> | null
+  election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
+  program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
 }, "id">
 
 export type PositionOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   maxVotes?: Prisma.SortOrder
-  type?: Prisma.SortOrder
-  scope?: Prisma.SortOrder
-  isVisible?: Prisma.SortOrder
-  sortOrder?: Prisma.SortOrder
-  representativeYearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  electionBodyId?: Prisma.SortOrderInput | Prisma.SortOrder
-  collegeId?: Prisma.SortOrderInput | Prisma.SortOrder
-  programId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  electionBodyId?: Prisma.SortOrderInput | Prisma.SortOrder
+  isVisible?: Prisma.SortOrder
+  programId?: Prisma.SortOrderInput | Prisma.SortOrder
+  sortOrder?: Prisma.SortOrder
+  type?: Prisma.SortOrder
+  collegeId?: Prisma.SortOrderInput | Prisma.SortOrder
+  scope?: Prisma.SortOrder
+  representativeYearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.PositionCountOrderByAggregateInput
   _avg?: Prisma.PositionAvgOrderByAggregateInput
   _max?: Prisma.PositionMaxOrderByAggregateInput
@@ -402,137 +402,137 @@ export type PositionScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Position"> | number
   name?: Prisma.StringWithAggregatesFilter<"Position"> | string
   maxVotes?: Prisma.IntWithAggregatesFilter<"Position"> | number
-  type?: Prisma.EnumPositionTypeWithAggregatesFilter<"Position"> | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeWithAggregatesFilter<"Position"> | $Enums.PositionScope
-  isVisible?: Prisma.BoolWithAggregatesFilter<"Position"> | boolean
-  sortOrder?: Prisma.IntWithAggregatesFilter<"Position"> | number
-  representativeYearLevel?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
   electionId?: Prisma.IntWithAggregatesFilter<"Position"> | number
-  electionBodyId?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
-  collegeId?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
-  programId?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Position"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Position"> | Date | string
+  electionBodyId?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
+  isVisible?: Prisma.BoolWithAggregatesFilter<"Position"> | boolean
+  programId?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
+  sortOrder?: Prisma.IntWithAggregatesFilter<"Position"> | number
+  type?: Prisma.EnumPositionTypeWithAggregatesFilter<"Position"> | $Enums.PositionType
+  collegeId?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
+  scope?: Prisma.EnumPositionScopeWithAggregatesFilter<"Position"> | $Enums.PositionScope
+  representativeYearLevel?: Prisma.IntNullableWithAggregatesFilter<"Position"> | number | null
 }
 
 export type PositionCreateInput = {
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
-  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
-  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
-  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
-  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
+  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
+  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
+  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
 }
 
 export type PositionUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
-  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
-  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
-  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
-  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
+  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionCreateManyInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
 }
 
 export type PositionUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type PositionUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type PositionListRelationFilter = {
@@ -549,73 +549,73 @@ export type PositionCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   maxVotes?: Prisma.SortOrder
-  type?: Prisma.SortOrder
-  scope?: Prisma.SortOrder
-  isVisible?: Prisma.SortOrder
-  sortOrder?: Prisma.SortOrder
-  representativeYearLevel?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  electionBodyId?: Prisma.SortOrder
-  collegeId?: Prisma.SortOrder
-  programId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  electionBodyId?: Prisma.SortOrder
+  isVisible?: Prisma.SortOrder
+  programId?: Prisma.SortOrder
+  sortOrder?: Prisma.SortOrder
+  type?: Prisma.SortOrder
+  collegeId?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
+  representativeYearLevel?: Prisma.SortOrder
 }
 
 export type PositionAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   maxVotes?: Prisma.SortOrder
-  sortOrder?: Prisma.SortOrder
-  representativeYearLevel?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
   electionBodyId?: Prisma.SortOrder
-  collegeId?: Prisma.SortOrder
   programId?: Prisma.SortOrder
+  sortOrder?: Prisma.SortOrder
+  collegeId?: Prisma.SortOrder
+  representativeYearLevel?: Prisma.SortOrder
 }
 
 export type PositionMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   maxVotes?: Prisma.SortOrder
-  type?: Prisma.SortOrder
-  scope?: Prisma.SortOrder
-  isVisible?: Prisma.SortOrder
-  sortOrder?: Prisma.SortOrder
-  representativeYearLevel?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  electionBodyId?: Prisma.SortOrder
-  collegeId?: Prisma.SortOrder
-  programId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  electionBodyId?: Prisma.SortOrder
+  isVisible?: Prisma.SortOrder
+  programId?: Prisma.SortOrder
+  sortOrder?: Prisma.SortOrder
+  type?: Prisma.SortOrder
+  collegeId?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
+  representativeYearLevel?: Prisma.SortOrder
 }
 
 export type PositionMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   maxVotes?: Prisma.SortOrder
-  type?: Prisma.SortOrder
-  scope?: Prisma.SortOrder
-  isVisible?: Prisma.SortOrder
-  sortOrder?: Prisma.SortOrder
-  representativeYearLevel?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
-  electionBodyId?: Prisma.SortOrder
-  collegeId?: Prisma.SortOrder
-  programId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  electionBodyId?: Prisma.SortOrder
+  isVisible?: Prisma.SortOrder
+  programId?: Prisma.SortOrder
+  sortOrder?: Prisma.SortOrder
+  type?: Prisma.SortOrder
+  collegeId?: Prisma.SortOrder
+  scope?: Prisma.SortOrder
+  representativeYearLevel?: Prisma.SortOrder
 }
 
 export type PositionSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   maxVotes?: Prisma.SortOrder
-  sortOrder?: Prisma.SortOrder
-  representativeYearLevel?: Prisma.SortOrder
   electionId?: Prisma.SortOrder
   electionBodyId?: Prisma.SortOrder
-  collegeId?: Prisma.SortOrder
   programId?: Prisma.SortOrder
+  sortOrder?: Prisma.SortOrder
+  collegeId?: Prisma.SortOrder
+  representativeYearLevel?: Prisma.SortOrder
 }
 
 export type PositionScalarRelationFilter = {
@@ -838,36 +838,36 @@ export type PositionUpdateOneRequiredWithoutBallotSelectionsNestedInput = {
 export type PositionCreateWithoutElectionInput = {
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
-  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
-  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
-  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
+  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
+  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateWithoutElectionInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
-  electionBodyId?: number | null
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
 }
 
 export type PositionCreateOrConnectWithoutElectionInput = {
@@ -903,52 +903,52 @@ export type PositionScalarWhereInput = {
   id?: Prisma.IntFilter<"Position"> | number
   name?: Prisma.StringFilter<"Position"> | string
   maxVotes?: Prisma.IntFilter<"Position"> | number
-  type?: Prisma.EnumPositionTypeFilter<"Position"> | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFilter<"Position"> | $Enums.PositionScope
-  isVisible?: Prisma.BoolFilter<"Position"> | boolean
-  sortOrder?: Prisma.IntFilter<"Position"> | number
-  representativeYearLevel?: Prisma.IntNullableFilter<"Position"> | number | null
   electionId?: Prisma.IntFilter<"Position"> | number
-  electionBodyId?: Prisma.IntNullableFilter<"Position"> | number | null
-  collegeId?: Prisma.IntNullableFilter<"Position"> | number | null
-  programId?: Prisma.IntNullableFilter<"Position"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Position"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Position"> | Date | string
+  electionBodyId?: Prisma.IntNullableFilter<"Position"> | number | null
+  isVisible?: Prisma.BoolFilter<"Position"> | boolean
+  programId?: Prisma.IntNullableFilter<"Position"> | number | null
+  sortOrder?: Prisma.IntFilter<"Position"> | number
+  type?: Prisma.EnumPositionTypeFilter<"Position"> | $Enums.PositionType
+  collegeId?: Prisma.IntNullableFilter<"Position"> | number | null
+  scope?: Prisma.EnumPositionScopeFilter<"Position"> | $Enums.PositionScope
+  representativeYearLevel?: Prisma.IntNullableFilter<"Position"> | number | null
 }
 
 export type PositionCreateWithoutCollegeInput = {
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
-  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
-  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
-  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
+  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
+  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateWithoutCollegeInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
 }
 
 export type PositionCreateOrConnectWithoutCollegeInput = {
@@ -980,36 +980,36 @@ export type PositionUpdateManyWithWhereWithoutCollegeInput = {
 export type PositionCreateWithoutProgramInput = {
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
-  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
-  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
-  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
+  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
+  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateWithoutProgramInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  collegeId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
+  electionBodyId?: number | null
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
 }
 
 export type PositionCreateOrConnectWithoutProgramInput = {
@@ -1041,36 +1041,36 @@ export type PositionUpdateManyWithWhereWithoutProgramInput = {
 export type PositionCreateWithoutElectionBodyInput = {
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
-  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
-  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
-  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
+  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
+  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateWithoutElectionBodyInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutPositionInput
+  candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
 }
 
 export type PositionCreateOrConnectWithoutElectionBodyInput = {
@@ -1102,35 +1102,35 @@ export type PositionUpdateManyWithWhereWithoutElectionBodyInput = {
 export type PositionCreateWithoutCandidatesInput = {
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
-  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
-  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
-  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutPositionInput
+  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
+  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
+  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
+  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateWithoutCandidatesInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutPositionInput
 }
 
@@ -1153,70 +1153,70 @@ export type PositionUpdateToOneWithWhereWithoutCandidatesInput = {
 export type PositionUpdateWithoutCandidatesInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
-  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
-  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
-  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutPositionNestedInput
+  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
+  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateWithoutCandidatesInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionCreateWithoutBallotSelectionsInput = {
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
-  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
-  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
-  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   candidates?: Prisma.CandidateCreateNestedManyWithoutPositionInput
+  college?: Prisma.CollegeCreateNestedOneWithoutPositionsInput
+  electionBody?: Prisma.ElectionBodyCreateNestedOneWithoutPositionsInput
+  election: Prisma.ElectionCreateNestedOneWithoutPositionsInput
+  program?: Prisma.ProgramCreateNestedOneWithoutPositionsInput
 }
 
 export type PositionUncheckedCreateWithoutBallotSelectionsInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
   candidates?: Prisma.CandidateUncheckedCreateNestedManyWithoutPositionInput
 }
 
@@ -1239,35 +1239,35 @@ export type PositionUpdateToOneWithWhereWithoutBallotSelectionsInput = {
 export type PositionUpdateWithoutBallotSelectionsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
-  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
-  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
-  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
+  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateWithoutBallotSelectionsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
 }
 
@@ -1275,268 +1275,268 @@ export type PositionCreateManyElectionInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
-  electionBodyId?: number | null
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
 }
 
 export type PositionUpdateWithoutElectionInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
-  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
-  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
-  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
+  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateWithoutElectionInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionUncheckedUpdateManyWithoutElectionInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type PositionCreateManyCollegeInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyId?: number | null
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
 }
 
 export type PositionUpdateWithoutCollegeInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
-  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
-  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
-  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateWithoutCollegeInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionUncheckedUpdateManyWithoutCollegeInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type PositionCreateManyProgramInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  electionBodyId?: number | null
-  collegeId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyId?: number | null
+  isVisible?: boolean
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
 }
 
 export type PositionUpdateWithoutProgramInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
-  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
-  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
-  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
+  electionBody?: Prisma.ElectionBodyUpdateOneWithoutPositionsNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateWithoutProgramInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionUncheckedUpdateManyWithoutProgramInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type PositionCreateManyElectionBodyInput = {
   id?: number
   name: string
   maxVotes?: number
-  type?: $Enums.PositionType
-  scope?: $Enums.PositionScope
-  isVisible?: boolean
-  sortOrder?: number
-  representativeYearLevel?: number | null
   electionId: number
-  collegeId?: number | null
-  programId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  isVisible?: boolean
+  programId?: number | null
+  sortOrder?: number
+  type?: $Enums.PositionType
+  collegeId?: number | null
+  scope?: $Enums.PositionScope
+  representativeYearLevel?: number | null
 }
 
 export type PositionUpdateWithoutElectionBodyInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
-  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
-  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
-  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUpdateManyWithoutPositionNestedInput
+  college?: Prisma.CollegeUpdateOneWithoutPositionsNestedInput
+  election?: Prisma.ElectionUpdateOneRequiredWithoutPositionsNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutPositionsNestedInput
 }
 
 export type PositionUncheckedUpdateWithoutElectionBodyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutPositionNestedInput
+  candidates?: Prisma.CandidateUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type PositionUncheckedUpdateManyWithoutElectionBodyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   maxVotes?: Prisma.IntFieldUpdateOperationsInput | number
-  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
-  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
-  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
-  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   electionId?: Prisma.IntFieldUpdateOperationsInput | number
-  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isVisible?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  sortOrder?: Prisma.IntFieldUpdateOperationsInput | number
+  type?: Prisma.EnumPositionTypeFieldUpdateOperationsInput | $Enums.PositionType
+  collegeId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  scope?: Prisma.EnumPositionScopeFieldUpdateOperationsInput | $Enums.PositionScope
+  representativeYearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 
@@ -1545,13 +1545,13 @@ export type PositionUncheckedUpdateManyWithoutElectionBodyInput = {
  */
 
 export type PositionCountOutputType = {
-  candidates: number
   ballotSelections: number
+  candidates: number
 }
 
 export type PositionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  candidates?: boolean | PositionCountOutputTypeCountCandidatesArgs
   ballotSelections?: boolean | PositionCountOutputTypeCountBallotSelectionsArgs
+  candidates?: boolean | PositionCountOutputTypeCountCandidatesArgs
 }
 
 /**
@@ -1567,15 +1567,15 @@ export type PositionCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
 /**
  * PositionCountOutputType without action
  */
-export type PositionCountOutputTypeCountCandidatesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CandidateWhereInput
+export type PositionCountOutputTypeCountBallotSelectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BallotSelectionWhereInput
 }
 
 /**
  * PositionCountOutputType without action
  */
-export type PositionCountOutputTypeCountBallotSelectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.BallotSelectionWhereInput
+export type PositionCountOutputTypeCountCandidatesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CandidateWhereInput
 }
 
 
@@ -1583,23 +1583,23 @@ export type PositionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   id?: boolean
   name?: boolean
   maxVotes?: boolean
-  type?: boolean
-  scope?: boolean
-  isVisible?: boolean
-  sortOrder?: boolean
-  representativeYearLevel?: boolean
   electionId?: boolean
-  electionBodyId?: boolean
-  collegeId?: boolean
-  programId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
-  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
-  college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
-  program?: boolean | Prisma.Position$programArgs<ExtArgs>
-  candidates?: boolean | Prisma.Position$candidatesArgs<ExtArgs>
+  electionBodyId?: boolean
+  isVisible?: boolean
+  programId?: boolean
+  sortOrder?: boolean
+  type?: boolean
+  collegeId?: boolean
+  scope?: boolean
+  representativeYearLevel?: boolean
   ballotSelections?: boolean | Prisma.Position$ballotSelectionsArgs<ExtArgs>
+  candidates?: boolean | Prisma.Position$candidatesArgs<ExtArgs>
+  college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
+  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  program?: boolean | Prisma.Position$programArgs<ExtArgs>
   _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["position"]>
 
@@ -1607,20 +1607,20 @@ export type PositionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   id?: boolean
   name?: boolean
   maxVotes?: boolean
-  type?: boolean
-  scope?: boolean
-  isVisible?: boolean
-  sortOrder?: boolean
-  representativeYearLevel?: boolean
   electionId?: boolean
-  electionBodyId?: boolean
-  collegeId?: boolean
-  programId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
-  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  electionBodyId?: boolean
+  isVisible?: boolean
+  programId?: boolean
+  sortOrder?: boolean
+  type?: boolean
+  collegeId?: boolean
+  scope?: boolean
+  representativeYearLevel?: boolean
   college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
+  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
   program?: boolean | Prisma.Position$programArgs<ExtArgs>
 }, ExtArgs["result"]["position"]>
 
@@ -1628,20 +1628,20 @@ export type PositionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   id?: boolean
   name?: boolean
   maxVotes?: boolean
-  type?: boolean
-  scope?: boolean
-  isVisible?: boolean
-  sortOrder?: boolean
-  representativeYearLevel?: boolean
   electionId?: boolean
-  electionBodyId?: boolean
-  collegeId?: boolean
-  programId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
-  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  electionBodyId?: boolean
+  isVisible?: boolean
+  programId?: boolean
+  sortOrder?: boolean
+  type?: boolean
+  collegeId?: boolean
+  scope?: boolean
+  representativeYearLevel?: boolean
   college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
+  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
   program?: boolean | Prisma.Position$programArgs<ExtArgs>
 }, ExtArgs["result"]["position"]>
 
@@ -1649,67 +1649,67 @@ export type PositionSelectScalar = {
   id?: boolean
   name?: boolean
   maxVotes?: boolean
-  type?: boolean
-  scope?: boolean
-  isVisible?: boolean
-  sortOrder?: boolean
-  representativeYearLevel?: boolean
   electionId?: boolean
-  electionBodyId?: boolean
-  collegeId?: boolean
-  programId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  electionBodyId?: boolean
+  isVisible?: boolean
+  programId?: boolean
+  sortOrder?: boolean
+  type?: boolean
+  collegeId?: boolean
+  scope?: boolean
+  representativeYearLevel?: boolean
 }
 
-export type PositionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "maxVotes" | "type" | "scope" | "isVisible" | "sortOrder" | "representativeYearLevel" | "electionId" | "electionBodyId" | "collegeId" | "programId" | "createdAt" | "updatedAt", ExtArgs["result"]["position"]>
+export type PositionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "maxVotes" | "electionId" | "createdAt" | "updatedAt" | "electionBodyId" | "isVisible" | "programId" | "sortOrder" | "type" | "collegeId" | "scope" | "representativeYearLevel", ExtArgs["result"]["position"]>
 export type PositionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
-  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
-  college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
-  program?: boolean | Prisma.Position$programArgs<ExtArgs>
-  candidates?: boolean | Prisma.Position$candidatesArgs<ExtArgs>
   ballotSelections?: boolean | Prisma.Position$ballotSelectionsArgs<ExtArgs>
+  candidates?: boolean | Prisma.Position$candidatesArgs<ExtArgs>
+  college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
+  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  program?: boolean | Prisma.Position$programArgs<ExtArgs>
   _count?: boolean | Prisma.PositionCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type PositionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
-  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
   college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
+  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
   program?: boolean | Prisma.Position$programArgs<ExtArgs>
 }
 export type PositionIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
-  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
   college?: boolean | Prisma.Position$collegeArgs<ExtArgs>
+  electionBody?: boolean | Prisma.Position$electionBodyArgs<ExtArgs>
+  election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
   program?: boolean | Prisma.Position$programArgs<ExtArgs>
 }
 
 export type $PositionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Position"
   objects: {
-    election: Prisma.$ElectionPayload<ExtArgs>
-    electionBody: Prisma.$ElectionBodyPayload<ExtArgs> | null
-    college: Prisma.$CollegePayload<ExtArgs> | null
-    program: Prisma.$ProgramPayload<ExtArgs> | null
-    candidates: Prisma.$CandidatePayload<ExtArgs>[]
     ballotSelections: Prisma.$BallotSelectionPayload<ExtArgs>[]
+    candidates: Prisma.$CandidatePayload<ExtArgs>[]
+    college: Prisma.$CollegePayload<ExtArgs> | null
+    electionBody: Prisma.$ElectionBodyPayload<ExtArgs> | null
+    election: Prisma.$ElectionPayload<ExtArgs>
+    program: Prisma.$ProgramPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     name: string
     maxVotes: number
-    type: $Enums.PositionType
-    scope: $Enums.PositionScope
-    isVisible: boolean
-    sortOrder: number
-    representativeYearLevel: number | null
     electionId: number
-    electionBodyId: number | null
-    collegeId: number | null
-    programId: number | null
     createdAt: Date
     updatedAt: Date
+    electionBodyId: number | null
+    isVisible: boolean
+    programId: number | null
+    sortOrder: number
+    type: $Enums.PositionType
+    collegeId: number | null
+    scope: $Enums.PositionScope
+    representativeYearLevel: number | null
   }, ExtArgs["result"]["position"]>
   composites: {}
 }
@@ -2104,12 +2104,12 @@ readonly fields: PositionFieldRefs;
  */
 export interface Prisma__PositionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  election<T extends Prisma.ElectionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionDefaultArgs<ExtArgs>>): Prisma.Prisma__ElectionClient<runtime.Types.Result.GetResult<Prisma.$ElectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  electionBody<T extends Prisma.Position$electionBodyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$electionBodyArgs<ExtArgs>>): Prisma.Prisma__ElectionBodyClient<runtime.Types.Result.GetResult<Prisma.$ElectionBodyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  college<T extends Prisma.Position$collegeArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$collegeArgs<ExtArgs>>): Prisma.Prisma__CollegeClient<runtime.Types.Result.GetResult<Prisma.$CollegePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  program<T extends Prisma.Position$programArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$programArgs<ExtArgs>>): Prisma.Prisma__ProgramClient<runtime.Types.Result.GetResult<Prisma.$ProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  candidates<T extends Prisma.Position$candidatesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$candidatesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CandidatePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   ballotSelections<T extends Prisma.Position$ballotSelectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$ballotSelectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BallotSelectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  candidates<T extends Prisma.Position$candidatesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$candidatesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CandidatePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  college<T extends Prisma.Position$collegeArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$collegeArgs<ExtArgs>>): Prisma.Prisma__CollegeClient<runtime.Types.Result.GetResult<Prisma.$CollegePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  electionBody<T extends Prisma.Position$electionBodyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$electionBodyArgs<ExtArgs>>): Prisma.Prisma__ElectionBodyClient<runtime.Types.Result.GetResult<Prisma.$ElectionBodyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  election<T extends Prisma.ElectionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionDefaultArgs<ExtArgs>>): Prisma.Prisma__ElectionClient<runtime.Types.Result.GetResult<Prisma.$ElectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  program<T extends Prisma.Position$programArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Position$programArgs<ExtArgs>>): Prisma.Prisma__ProgramClient<runtime.Types.Result.GetResult<Prisma.$ProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2142,17 +2142,17 @@ export interface PositionFieldRefs {
   readonly id: Prisma.FieldRef<"Position", 'Int'>
   readonly name: Prisma.FieldRef<"Position", 'String'>
   readonly maxVotes: Prisma.FieldRef<"Position", 'Int'>
-  readonly type: Prisma.FieldRef<"Position", 'PositionType'>
-  readonly scope: Prisma.FieldRef<"Position", 'PositionScope'>
-  readonly isVisible: Prisma.FieldRef<"Position", 'Boolean'>
-  readonly sortOrder: Prisma.FieldRef<"Position", 'Int'>
-  readonly representativeYearLevel: Prisma.FieldRef<"Position", 'Int'>
   readonly electionId: Prisma.FieldRef<"Position", 'Int'>
-  readonly electionBodyId: Prisma.FieldRef<"Position", 'Int'>
-  readonly collegeId: Prisma.FieldRef<"Position", 'Int'>
-  readonly programId: Prisma.FieldRef<"Position", 'Int'>
   readonly createdAt: Prisma.FieldRef<"Position", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Position", 'DateTime'>
+  readonly electionBodyId: Prisma.FieldRef<"Position", 'Int'>
+  readonly isVisible: Prisma.FieldRef<"Position", 'Boolean'>
+  readonly programId: Prisma.FieldRef<"Position", 'Int'>
+  readonly sortOrder: Prisma.FieldRef<"Position", 'Int'>
+  readonly type: Prisma.FieldRef<"Position", 'PositionType'>
+  readonly collegeId: Prisma.FieldRef<"Position", 'Int'>
+  readonly scope: Prisma.FieldRef<"Position", 'PositionScope'>
+  readonly representativeYearLevel: Prisma.FieldRef<"Position", 'Int'>
 }
     
 
@@ -2554,60 +2554,27 @@ export type PositionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * Position.electionBody
+ * Position.ballotSelections
  */
-export type Position$electionBodyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Position$ballotSelectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ElectionBody
+   * Select specific fields to fetch from the BallotSelection
    */
-  select?: Prisma.ElectionBodySelect<ExtArgs> | null
+  select?: Prisma.BallotSelectionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ElectionBody
+   * Omit specific fields from the BallotSelection
    */
-  omit?: Prisma.ElectionBodyOmit<ExtArgs> | null
+  omit?: Prisma.BallotSelectionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ElectionBodyInclude<ExtArgs> | null
-  where?: Prisma.ElectionBodyWhereInput
-}
-
-/**
- * Position.college
- */
-export type Position$collegeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the College
-   */
-  select?: Prisma.CollegeSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the College
-   */
-  omit?: Prisma.CollegeOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.CollegeInclude<ExtArgs> | null
-  where?: Prisma.CollegeWhereInput
-}
-
-/**
- * Position.program
- */
-export type Position$programArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Program
-   */
-  select?: Prisma.ProgramSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Program
-   */
-  omit?: Prisma.ProgramOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ProgramInclude<ExtArgs> | null
-  where?: Prisma.ProgramWhereInput
+  include?: Prisma.BallotSelectionInclude<ExtArgs> | null
+  where?: Prisma.BallotSelectionWhereInput
+  orderBy?: Prisma.BallotSelectionOrderByWithRelationInput | Prisma.BallotSelectionOrderByWithRelationInput[]
+  cursor?: Prisma.BallotSelectionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BallotSelectionScalarFieldEnum | Prisma.BallotSelectionScalarFieldEnum[]
 }
 
 /**
@@ -2635,27 +2602,60 @@ export type Position$candidatesArgs<ExtArgs extends runtime.Types.Extensions.Int
 }
 
 /**
- * Position.ballotSelections
+ * Position.college
  */
-export type Position$ballotSelectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Position$collegeArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the BallotSelection
+   * Select specific fields to fetch from the College
    */
-  select?: Prisma.BallotSelectionSelect<ExtArgs> | null
+  select?: Prisma.CollegeSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the BallotSelection
+   * Omit specific fields from the College
    */
-  omit?: Prisma.BallotSelectionOmit<ExtArgs> | null
+  omit?: Prisma.CollegeOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.BallotSelectionInclude<ExtArgs> | null
-  where?: Prisma.BallotSelectionWhereInput
-  orderBy?: Prisma.BallotSelectionOrderByWithRelationInput | Prisma.BallotSelectionOrderByWithRelationInput[]
-  cursor?: Prisma.BallotSelectionWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.BallotSelectionScalarFieldEnum | Prisma.BallotSelectionScalarFieldEnum[]
+  include?: Prisma.CollegeInclude<ExtArgs> | null
+  where?: Prisma.CollegeWhereInput
+}
+
+/**
+ * Position.electionBody
+ */
+export type Position$electionBodyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ElectionBody
+   */
+  select?: Prisma.ElectionBodySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ElectionBody
+   */
+  omit?: Prisma.ElectionBodyOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ElectionBodyInclude<ExtArgs> | null
+  where?: Prisma.ElectionBodyWhereInput
+}
+
+/**
+ * Position.program
+ */
+export type Position$programArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Program
+   */
+  select?: Prisma.ProgramSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Program
+   */
+  omit?: Prisma.ProgramOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProgramInclude<ExtArgs> | null
+  where?: Prisma.ProgramWhereInput
 }
 
 /**

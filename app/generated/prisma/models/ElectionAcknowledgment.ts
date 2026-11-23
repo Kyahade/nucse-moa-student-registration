@@ -224,8 +224,8 @@ export type ElectionAcknowledgmentWhereInput = {
   electionId?: Prisma.IntFilter<"ElectionAcknowledgment"> | number
   studentIdEntered?: Prisma.StringFilter<"ElectionAcknowledgment"> | string
   acceptedAt?: Prisma.DateTimeFilter<"ElectionAcknowledgment"> | Date | string
-  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
   election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
+  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
   items?: Prisma.ElectionAcknowledgmentItemListRelationFilter
 }
 
@@ -235,8 +235,8 @@ export type ElectionAcknowledgmentOrderByWithRelationInput = {
   electionId?: Prisma.SortOrder
   studentIdEntered?: Prisma.SortOrder
   acceptedAt?: Prisma.SortOrder
-  voter?: Prisma.VoterOrderByWithRelationInput
   election?: Prisma.ElectionOrderByWithRelationInput
+  voter?: Prisma.VoterOrderByWithRelationInput
   items?: Prisma.ElectionAcknowledgmentItemOrderByRelationAggregateInput
 }
 
@@ -250,8 +250,8 @@ export type ElectionAcknowledgmentWhereUniqueInput = Prisma.AtLeast<{
   electionId?: Prisma.IntFilter<"ElectionAcknowledgment"> | number
   studentIdEntered?: Prisma.StringFilter<"ElectionAcknowledgment"> | string
   acceptedAt?: Prisma.DateTimeFilter<"ElectionAcknowledgment"> | Date | string
-  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
   election?: Prisma.XOR<Prisma.ElectionScalarRelationFilter, Prisma.ElectionWhereInput>
+  voter?: Prisma.XOR<Prisma.VoterScalarRelationFilter, Prisma.VoterWhereInput>
   items?: Prisma.ElectionAcknowledgmentItemListRelationFilter
 }, "id" | "voterId_electionId">
 
@@ -282,8 +282,8 @@ export type ElectionAcknowledgmentScalarWhereWithAggregatesInput = {
 export type ElectionAcknowledgmentCreateInput = {
   studentIdEntered: string
   acceptedAt?: Date | string
-  voter: Prisma.VoterCreateNestedOneWithoutAcknowledgmentsInput
   election: Prisma.ElectionCreateNestedOneWithoutAcknowledgmentsInput
+  voter: Prisma.VoterCreateNestedOneWithoutAcknowledgmentsInput
   items?: Prisma.ElectionAcknowledgmentItemCreateNestedManyWithoutAcknowledgmentInput
 }
 
@@ -299,8 +299,8 @@ export type ElectionAcknowledgmentUncheckedCreateInput = {
 export type ElectionAcknowledgmentUpdateInput = {
   studentIdEntered?: Prisma.StringFieldUpdateOperationsInput | string
   acceptedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  voter?: Prisma.VoterUpdateOneRequiredWithoutAcknowledgmentsNestedInput
   election?: Prisma.ElectionUpdateOneRequiredWithoutAcknowledgmentsNestedInput
+  voter?: Prisma.VoterUpdateOneRequiredWithoutAcknowledgmentsNestedInput
   items?: Prisma.ElectionAcknowledgmentItemUpdateManyWithoutAcknowledgmentNestedInput
 }
 
@@ -584,8 +584,8 @@ export type ElectionAcknowledgmentUpdateManyWithWhereWithoutVoterInput = {
 export type ElectionAcknowledgmentCreateWithoutItemsInput = {
   studentIdEntered: string
   acceptedAt?: Date | string
-  voter: Prisma.VoterCreateNestedOneWithoutAcknowledgmentsInput
   election: Prisma.ElectionCreateNestedOneWithoutAcknowledgmentsInput
+  voter: Prisma.VoterCreateNestedOneWithoutAcknowledgmentsInput
 }
 
 export type ElectionAcknowledgmentUncheckedCreateWithoutItemsInput = {
@@ -615,8 +615,8 @@ export type ElectionAcknowledgmentUpdateToOneWithWhereWithoutItemsInput = {
 export type ElectionAcknowledgmentUpdateWithoutItemsInput = {
   studentIdEntered?: Prisma.StringFieldUpdateOperationsInput | string
   acceptedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  voter?: Prisma.VoterUpdateOneRequiredWithoutAcknowledgmentsNestedInput
   election?: Prisma.ElectionUpdateOneRequiredWithoutAcknowledgmentsNestedInput
+  voter?: Prisma.VoterUpdateOneRequiredWithoutAcknowledgmentsNestedInput
 }
 
 export type ElectionAcknowledgmentUncheckedUpdateWithoutItemsInput = {
@@ -722,8 +722,8 @@ export type ElectionAcknowledgmentSelect<ExtArgs extends runtime.Types.Extension
   electionId?: boolean
   studentIdEntered?: boolean
   acceptedAt?: boolean
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   items?: boolean | Prisma.ElectionAcknowledgment$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.ElectionAcknowledgmentCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["electionAcknowledgment"]>
@@ -734,8 +734,8 @@ export type ElectionAcknowledgmentSelectCreateManyAndReturn<ExtArgs extends runt
   electionId?: boolean
   studentIdEntered?: boolean
   acceptedAt?: boolean
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["electionAcknowledgment"]>
 
 export type ElectionAcknowledgmentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -744,8 +744,8 @@ export type ElectionAcknowledgmentSelectUpdateManyAndReturn<ExtArgs extends runt
   electionId?: boolean
   studentIdEntered?: boolean
   acceptedAt?: boolean
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["electionAcknowledgment"]>
 
 export type ElectionAcknowledgmentSelectScalar = {
@@ -758,25 +758,25 @@ export type ElectionAcknowledgmentSelectScalar = {
 
 export type ElectionAcknowledgmentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "voterId" | "electionId" | "studentIdEntered" | "acceptedAt", ExtArgs["result"]["electionAcknowledgment"]>
 export type ElectionAcknowledgmentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   items?: boolean | Prisma.ElectionAcknowledgment$itemsArgs<ExtArgs>
   _count?: boolean | Prisma.ElectionAcknowledgmentCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ElectionAcknowledgmentIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }
 export type ElectionAcknowledgmentIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
   election?: boolean | Prisma.ElectionDefaultArgs<ExtArgs>
+  voter?: boolean | Prisma.VoterDefaultArgs<ExtArgs>
 }
 
 export type $ElectionAcknowledgmentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ElectionAcknowledgment"
   objects: {
-    voter: Prisma.$VoterPayload<ExtArgs>
     election: Prisma.$ElectionPayload<ExtArgs>
+    voter: Prisma.$VoterPayload<ExtArgs>
     items: Prisma.$ElectionAcknowledgmentItemPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1179,8 +1179,8 @@ readonly fields: ElectionAcknowledgmentFieldRefs;
  */
 export interface Prisma__ElectionAcknowledgmentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  voter<T extends Prisma.VoterDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.VoterDefaultArgs<ExtArgs>>): Prisma.Prisma__VoterClient<runtime.Types.Result.GetResult<Prisma.$VoterPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   election<T extends Prisma.ElectionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionDefaultArgs<ExtArgs>>): Prisma.Prisma__ElectionClient<runtime.Types.Result.GetResult<Prisma.$ElectionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  voter<T extends Prisma.VoterDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.VoterDefaultArgs<ExtArgs>>): Prisma.Prisma__VoterClient<runtime.Types.Result.GetResult<Prisma.$VoterPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   items<T extends Prisma.ElectionAcknowledgment$itemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionAcknowledgment$itemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionAcknowledgmentItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.

@@ -220,10 +220,10 @@ export type ProgramWhereInput = {
   collegeId?: Prisma.IntFilter<"Program"> | number
   createdAt?: Prisma.DateTimeFilter<"Program"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Program"> | Date | string
+  electionBodyPrograms?: Prisma.ElectionBodyProgramListRelationFilter
+  positions?: Prisma.PositionListRelationFilter
   college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
   voters?: Prisma.VoterListRelationFilter
-  positions?: Prisma.PositionListRelationFilter
-  electionBodyPrograms?: Prisma.ElectionBodyProgramListRelationFilter
 }
 
 export type ProgramOrderByWithRelationInput = {
@@ -232,10 +232,10 @@ export type ProgramOrderByWithRelationInput = {
   collegeId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  electionBodyPrograms?: Prisma.ElectionBodyProgramOrderByRelationAggregateInput
+  positions?: Prisma.PositionOrderByRelationAggregateInput
   college?: Prisma.CollegeOrderByWithRelationInput
   voters?: Prisma.VoterOrderByRelationAggregateInput
-  positions?: Prisma.PositionOrderByRelationAggregateInput
-  electionBodyPrograms?: Prisma.ElectionBodyProgramOrderByRelationAggregateInput
 }
 
 export type ProgramWhereUniqueInput = Prisma.AtLeast<{
@@ -248,10 +248,10 @@ export type ProgramWhereUniqueInput = Prisma.AtLeast<{
   collegeId?: Prisma.IntFilter<"Program"> | number
   createdAt?: Prisma.DateTimeFilter<"Program"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Program"> | Date | string
+  electionBodyPrograms?: Prisma.ElectionBodyProgramListRelationFilter
+  positions?: Prisma.PositionListRelationFilter
   college?: Prisma.XOR<Prisma.CollegeScalarRelationFilter, Prisma.CollegeWhereInput>
   voters?: Prisma.VoterListRelationFilter
-  positions?: Prisma.PositionListRelationFilter
-  electionBodyPrograms?: Prisma.ElectionBodyProgramListRelationFilter
 }, "id" | "collegeId_name">
 
 export type ProgramOrderByWithAggregationInput = {
@@ -282,10 +282,10 @@ export type ProgramCreateInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyPrograms?: Prisma.ElectionBodyProgramCreateNestedManyWithoutProgramInput
+  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
   college: Prisma.CollegeCreateNestedOneWithoutProgramsInput
   voters?: Prisma.VoterCreateNestedManyWithoutProgramInput
-  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
-  electionBodyPrograms?: Prisma.ElectionBodyProgramCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramUncheckedCreateInput = {
@@ -294,19 +294,19 @@ export type ProgramUncheckedCreateInput = {
   collegeId: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
-  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutProgramInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedCreateNestedManyWithoutProgramInput
+  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutProgramInput
+  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyPrograms?: Prisma.ElectionBodyProgramUpdateManyWithoutProgramNestedInput
+  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
   college?: Prisma.CollegeUpdateOneRequiredWithoutProgramsNestedInput
   voters?: Prisma.VoterUpdateManyWithoutProgramNestedInput
-  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
-  electionBodyPrograms?: Prisma.ElectionBodyProgramUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramUncheckedUpdateInput = {
@@ -315,9 +315,9 @@ export type ProgramUncheckedUpdateInput = {
   collegeId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
-  positions?: Prisma.PositionUncheckedUpdateManyWithoutProgramNestedInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedUpdateManyWithoutProgramNestedInput
+  positions?: Prisma.PositionUncheckedUpdateManyWithoutProgramNestedInput
+  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramCreateManyInput = {
@@ -493,9 +493,9 @@ export type ProgramCreateWithoutCollegeInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  voters?: Prisma.VoterCreateNestedManyWithoutProgramInput
-  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramCreateNestedManyWithoutProgramInput
+  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
+  voters?: Prisma.VoterCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramUncheckedCreateWithoutCollegeInput = {
@@ -503,9 +503,9 @@ export type ProgramUncheckedCreateWithoutCollegeInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
-  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutProgramInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedCreateNestedManyWithoutProgramInput
+  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutProgramInput
+  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramCreateOrConnectWithoutCollegeInput = {
@@ -549,9 +549,9 @@ export type ProgramCreateWithoutElectionBodyProgramsInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
   college: Prisma.CollegeCreateNestedOneWithoutProgramsInput
   voters?: Prisma.VoterCreateNestedManyWithoutProgramInput
-  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramUncheckedCreateWithoutElectionBodyProgramsInput = {
@@ -560,8 +560,8 @@ export type ProgramUncheckedCreateWithoutElectionBodyProgramsInput = {
   collegeId: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
   positions?: Prisma.PositionUncheckedCreateNestedManyWithoutProgramInput
+  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramCreateOrConnectWithoutElectionBodyProgramsInput = {
@@ -584,9 +584,9 @@ export type ProgramUpdateWithoutElectionBodyProgramsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
   college?: Prisma.CollegeUpdateOneRequiredWithoutProgramsNestedInput
   voters?: Prisma.VoterUpdateManyWithoutProgramNestedInput
-  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramUncheckedUpdateWithoutElectionBodyProgramsInput = {
@@ -595,17 +595,17 @@ export type ProgramUncheckedUpdateWithoutElectionBodyProgramsInput = {
   collegeId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
   positions?: Prisma.PositionUncheckedUpdateManyWithoutProgramNestedInput
+  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramCreateWithoutPositionsInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  electionBodyPrograms?: Prisma.ElectionBodyProgramCreateNestedManyWithoutProgramInput
   college: Prisma.CollegeCreateNestedOneWithoutProgramsInput
   voters?: Prisma.VoterCreateNestedManyWithoutProgramInput
-  electionBodyPrograms?: Prisma.ElectionBodyProgramCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramUncheckedCreateWithoutPositionsInput = {
@@ -614,8 +614,8 @@ export type ProgramUncheckedCreateWithoutPositionsInput = {
   collegeId: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedCreateNestedManyWithoutProgramInput
+  voters?: Prisma.VoterUncheckedCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramCreateOrConnectWithoutPositionsInput = {
@@ -638,9 +638,9 @@ export type ProgramUpdateWithoutPositionsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  electionBodyPrograms?: Prisma.ElectionBodyProgramUpdateManyWithoutProgramNestedInput
   college?: Prisma.CollegeUpdateOneRequiredWithoutProgramsNestedInput
   voters?: Prisma.VoterUpdateManyWithoutProgramNestedInput
-  electionBodyPrograms?: Prisma.ElectionBodyProgramUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramUncheckedUpdateWithoutPositionsInput = {
@@ -649,17 +649,17 @@ export type ProgramUncheckedUpdateWithoutPositionsInput = {
   collegeId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedUpdateManyWithoutProgramNestedInput
+  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramCreateWithoutVotersInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  college: Prisma.CollegeCreateNestedOneWithoutProgramsInput
-  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramCreateNestedManyWithoutProgramInput
+  positions?: Prisma.PositionCreateNestedManyWithoutProgramInput
+  college: Prisma.CollegeCreateNestedOneWithoutProgramsInput
 }
 
 export type ProgramUncheckedCreateWithoutVotersInput = {
@@ -668,8 +668,8 @@ export type ProgramUncheckedCreateWithoutVotersInput = {
   collegeId: number
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutProgramInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedCreateNestedManyWithoutProgramInput
+  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutProgramInput
 }
 
 export type ProgramCreateOrConnectWithoutVotersInput = {
@@ -692,9 +692,9 @@ export type ProgramUpdateWithoutVotersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  college?: Prisma.CollegeUpdateOneRequiredWithoutProgramsNestedInput
-  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUpdateManyWithoutProgramNestedInput
+  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
+  college?: Prisma.CollegeUpdateOneRequiredWithoutProgramsNestedInput
 }
 
 export type ProgramUncheckedUpdateWithoutVotersInput = {
@@ -703,8 +703,8 @@ export type ProgramUncheckedUpdateWithoutVotersInput = {
   collegeId?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUncheckedUpdateManyWithoutProgramNestedInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedUpdateManyWithoutProgramNestedInput
+  positions?: Prisma.PositionUncheckedUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramCreateManyCollegeInput = {
@@ -718,9 +718,9 @@ export type ProgramUpdateWithoutCollegeInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  voters?: Prisma.VoterUpdateManyWithoutProgramNestedInput
-  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUpdateManyWithoutProgramNestedInput
+  positions?: Prisma.PositionUpdateManyWithoutProgramNestedInput
+  voters?: Prisma.VoterUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramUncheckedUpdateWithoutCollegeInput = {
@@ -728,9 +728,9 @@ export type ProgramUncheckedUpdateWithoutCollegeInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
-  positions?: Prisma.PositionUncheckedUpdateManyWithoutProgramNestedInput
   electionBodyPrograms?: Prisma.ElectionBodyProgramUncheckedUpdateManyWithoutProgramNestedInput
+  positions?: Prisma.PositionUncheckedUpdateManyWithoutProgramNestedInput
+  voters?: Prisma.VoterUncheckedUpdateManyWithoutProgramNestedInput
 }
 
 export type ProgramUncheckedUpdateManyWithoutCollegeInput = {
@@ -746,15 +746,15 @@ export type ProgramUncheckedUpdateManyWithoutCollegeInput = {
  */
 
 export type ProgramCountOutputType = {
-  voters: number
-  positions: number
   electionBodyPrograms: number
+  positions: number
+  voters: number
 }
 
 export type ProgramCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  voters?: boolean | ProgramCountOutputTypeCountVotersArgs
-  positions?: boolean | ProgramCountOutputTypeCountPositionsArgs
   electionBodyPrograms?: boolean | ProgramCountOutputTypeCountElectionBodyProgramsArgs
+  positions?: boolean | ProgramCountOutputTypeCountPositionsArgs
+  voters?: boolean | ProgramCountOutputTypeCountVotersArgs
 }
 
 /**
@@ -770,8 +770,8 @@ export type ProgramCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * ProgramCountOutputType without action
  */
-export type ProgramCountOutputTypeCountVotersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.VoterWhereInput
+export type ProgramCountOutputTypeCountElectionBodyProgramsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ElectionBodyProgramWhereInput
 }
 
 /**
@@ -784,8 +784,8 @@ export type ProgramCountOutputTypeCountPositionsArgs<ExtArgs extends runtime.Typ
 /**
  * ProgramCountOutputType without action
  */
-export type ProgramCountOutputTypeCountElectionBodyProgramsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ElectionBodyProgramWhereInput
+export type ProgramCountOutputTypeCountVotersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.VoterWhereInput
 }
 
 
@@ -795,10 +795,10 @@ export type ProgramSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   collegeId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  electionBodyPrograms?: boolean | Prisma.Program$electionBodyProgramsArgs<ExtArgs>
+  positions?: boolean | Prisma.Program$positionsArgs<ExtArgs>
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   voters?: boolean | Prisma.Program$votersArgs<ExtArgs>
-  positions?: boolean | Prisma.Program$positionsArgs<ExtArgs>
-  electionBodyPrograms?: boolean | Prisma.Program$electionBodyProgramsArgs<ExtArgs>
   _count?: boolean | Prisma.ProgramCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["program"]>
 
@@ -830,10 +830,10 @@ export type ProgramSelectScalar = {
 
 export type ProgramOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "collegeId" | "createdAt" | "updatedAt", ExtArgs["result"]["program"]>
 export type ProgramInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  electionBodyPrograms?: boolean | Prisma.Program$electionBodyProgramsArgs<ExtArgs>
+  positions?: boolean | Prisma.Program$positionsArgs<ExtArgs>
   college?: boolean | Prisma.CollegeDefaultArgs<ExtArgs>
   voters?: boolean | Prisma.Program$votersArgs<ExtArgs>
-  positions?: boolean | Prisma.Program$positionsArgs<ExtArgs>
-  electionBodyPrograms?: boolean | Prisma.Program$electionBodyProgramsArgs<ExtArgs>
   _count?: boolean | Prisma.ProgramCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ProgramIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -846,10 +846,10 @@ export type ProgramIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type $ProgramPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Program"
   objects: {
+    electionBodyPrograms: Prisma.$ElectionBodyProgramPayload<ExtArgs>[]
+    positions: Prisma.$PositionPayload<ExtArgs>[]
     college: Prisma.$CollegePayload<ExtArgs>
     voters: Prisma.$VoterPayload<ExtArgs>[]
-    positions: Prisma.$PositionPayload<ExtArgs>[]
-    electionBodyPrograms: Prisma.$ElectionBodyProgramPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1251,10 +1251,10 @@ readonly fields: ProgramFieldRefs;
  */
 export interface Prisma__ProgramClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  electionBodyPrograms<T extends Prisma.Program$electionBodyProgramsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Program$electionBodyProgramsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionBodyProgramPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  positions<T extends Prisma.Program$positionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Program$positionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   college<T extends Prisma.CollegeDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CollegeDefaultArgs<ExtArgs>>): Prisma.Prisma__CollegeClient<runtime.Types.Result.GetResult<Prisma.$CollegePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   voters<T extends Prisma.Program$votersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Program$votersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$VoterPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  positions<T extends Prisma.Program$positionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Program$positionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  electionBodyPrograms<T extends Prisma.Program$electionBodyProgramsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Program$electionBodyProgramsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionBodyProgramPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1690,27 +1690,27 @@ export type ProgramDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Program.voters
+ * Program.electionBodyPrograms
  */
-export type Program$votersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Program$electionBodyProgramsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Voter
+   * Select specific fields to fetch from the ElectionBodyProgram
    */
-  select?: Prisma.VoterSelect<ExtArgs> | null
+  select?: Prisma.ElectionBodyProgramSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Voter
+   * Omit specific fields from the ElectionBodyProgram
    */
-  omit?: Prisma.VoterOmit<ExtArgs> | null
+  omit?: Prisma.ElectionBodyProgramOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.VoterInclude<ExtArgs> | null
-  where?: Prisma.VoterWhereInput
-  orderBy?: Prisma.VoterOrderByWithRelationInput | Prisma.VoterOrderByWithRelationInput[]
-  cursor?: Prisma.VoterWhereUniqueInput
+  include?: Prisma.ElectionBodyProgramInclude<ExtArgs> | null
+  where?: Prisma.ElectionBodyProgramWhereInput
+  orderBy?: Prisma.ElectionBodyProgramOrderByWithRelationInput | Prisma.ElectionBodyProgramOrderByWithRelationInput[]
+  cursor?: Prisma.ElectionBodyProgramWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.VoterScalarFieldEnum | Prisma.VoterScalarFieldEnum[]
+  distinct?: Prisma.ElectionBodyProgramScalarFieldEnum | Prisma.ElectionBodyProgramScalarFieldEnum[]
 }
 
 /**
@@ -1738,27 +1738,27 @@ export type Program$positionsArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Program.electionBodyPrograms
+ * Program.voters
  */
-export type Program$electionBodyProgramsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Program$votersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ElectionBodyProgram
+   * Select specific fields to fetch from the Voter
    */
-  select?: Prisma.ElectionBodyProgramSelect<ExtArgs> | null
+  select?: Prisma.VoterSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ElectionBodyProgram
+   * Omit specific fields from the Voter
    */
-  omit?: Prisma.ElectionBodyProgramOmit<ExtArgs> | null
+  omit?: Prisma.VoterOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ElectionBodyProgramInclude<ExtArgs> | null
-  where?: Prisma.ElectionBodyProgramWhereInput
-  orderBy?: Prisma.ElectionBodyProgramOrderByWithRelationInput | Prisma.ElectionBodyProgramOrderByWithRelationInput[]
-  cursor?: Prisma.ElectionBodyProgramWhereUniqueInput
+  include?: Prisma.VoterInclude<ExtArgs> | null
+  where?: Prisma.VoterWhereInput
+  orderBy?: Prisma.VoterOrderByWithRelationInput | Prisma.VoterOrderByWithRelationInput[]
+  cursor?: Prisma.VoterWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ElectionBodyProgramScalarFieldEnum | Prisma.ElectionBodyProgramScalarFieldEnum[]
+  distinct?: Prisma.VoterScalarFieldEnum | Prisma.VoterScalarFieldEnum[]
 }
 
 /**

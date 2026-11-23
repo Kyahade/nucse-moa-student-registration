@@ -232,9 +232,9 @@ export type ElectionWhereInput = {
   isActive?: Prisma.BoolFilter<"Election"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Election"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Election"> | Date | string
-  positions?: Prisma.PositionListRelationFilter
-  electionBodies?: Prisma.ElectionBodyListRelationFilter
   acknowledgments?: Prisma.ElectionAcknowledgmentListRelationFilter
+  electionBodies?: Prisma.ElectionBodyListRelationFilter
+  positions?: Prisma.PositionListRelationFilter
   votingParticipations?: Prisma.VotingParticipationListRelationFilter
 }
 
@@ -246,9 +246,9 @@ export type ElectionOrderByWithRelationInput = {
   isActive?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  positions?: Prisma.PositionOrderByRelationAggregateInput
-  electionBodies?: Prisma.ElectionBodyOrderByRelationAggregateInput
   acknowledgments?: Prisma.ElectionAcknowledgmentOrderByRelationAggregateInput
+  electionBodies?: Prisma.ElectionBodyOrderByRelationAggregateInput
+  positions?: Prisma.PositionOrderByRelationAggregateInput
   votingParticipations?: Prisma.VotingParticipationOrderByRelationAggregateInput
 }
 
@@ -263,9 +263,9 @@ export type ElectionWhereUniqueInput = Prisma.AtLeast<{
   isActive?: Prisma.BoolFilter<"Election"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Election"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Election"> | Date | string
-  positions?: Prisma.PositionListRelationFilter
-  electionBodies?: Prisma.ElectionBodyListRelationFilter
   acknowledgments?: Prisma.ElectionAcknowledgmentListRelationFilter
+  electionBodies?: Prisma.ElectionBodyListRelationFilter
+  positions?: Prisma.PositionListRelationFilter
   votingParticipations?: Prisma.VotingParticipationListRelationFilter
 }, "id">
 
@@ -304,9 +304,9 @@ export type ElectionCreateInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
-  electionBodies?: Prisma.ElectionBodyCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutElectionInput
+  electionBodies?: Prisma.ElectionBodyCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutElectionInput
 }
 
@@ -318,9 +318,9 @@ export type ElectionUncheckedCreateInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
-  electionBodies?: Prisma.ElectionBodyUncheckedCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutElectionInput
+  electionBodies?: Prisma.ElectionBodyUncheckedCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutElectionInput
 }
 
@@ -331,9 +331,9 @@ export type ElectionUpdateInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
-  electionBodies?: Prisma.ElectionBodyUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutElectionNestedInput
+  electionBodies?: Prisma.ElectionBodyUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutElectionNestedInput
 }
 
@@ -345,9 +345,9 @@ export type ElectionUncheckedUpdateInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
-  electionBodies?: Prisma.ElectionBodyUncheckedUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutElectionNestedInput
+  electionBodies?: Prisma.ElectionBodyUncheckedUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutElectionNestedInput
 }
 
@@ -506,8 +506,8 @@ export type ElectionCreateWithoutElectionBodiesInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutElectionInput
 }
 
@@ -519,8 +519,8 @@ export type ElectionUncheckedCreateWithoutElectionBodiesInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutElectionInput
 }
 
@@ -547,8 +547,8 @@ export type ElectionUpdateWithoutElectionBodiesInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutElectionNestedInput
 }
 
@@ -560,8 +560,8 @@ export type ElectionUncheckedUpdateWithoutElectionBodiesInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutElectionNestedInput
 }
 
@@ -572,8 +572,8 @@ export type ElectionCreateWithoutPositionsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  electionBodies?: Prisma.ElectionBodyCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutElectionInput
+  electionBodies?: Prisma.ElectionBodyCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutElectionInput
 }
 
@@ -585,8 +585,8 @@ export type ElectionUncheckedCreateWithoutPositionsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  electionBodies?: Prisma.ElectionBodyUncheckedCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutElectionInput
+  electionBodies?: Prisma.ElectionBodyUncheckedCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutElectionInput
 }
 
@@ -613,8 +613,8 @@ export type ElectionUpdateWithoutPositionsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  electionBodies?: Prisma.ElectionBodyUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutElectionNestedInput
+  electionBodies?: Prisma.ElectionBodyUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutElectionNestedInput
 }
 
@@ -626,8 +626,8 @@ export type ElectionUncheckedUpdateWithoutPositionsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  electionBodies?: Prisma.ElectionBodyUncheckedUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutElectionNestedInput
+  electionBodies?: Prisma.ElectionBodyUncheckedUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutElectionNestedInput
 }
 
@@ -638,8 +638,8 @@ export type ElectionCreateWithoutAcknowledgmentsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
   electionBodies?: Prisma.ElectionBodyCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutElectionInput
 }
 
@@ -651,8 +651,8 @@ export type ElectionUncheckedCreateWithoutAcknowledgmentsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
   electionBodies?: Prisma.ElectionBodyUncheckedCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutElectionInput
 }
 
@@ -679,8 +679,8 @@ export type ElectionUpdateWithoutAcknowledgmentsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
   electionBodies?: Prisma.ElectionBodyUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutElectionNestedInput
 }
 
@@ -692,8 +692,8 @@ export type ElectionUncheckedUpdateWithoutAcknowledgmentsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
   electionBodies?: Prisma.ElectionBodyUncheckedUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutElectionNestedInput
 }
 
@@ -704,9 +704,9 @@ export type ElectionCreateWithoutVotingParticipationsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
-  electionBodies?: Prisma.ElectionBodyCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutElectionInput
+  electionBodies?: Prisma.ElectionBodyCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionCreateNestedManyWithoutElectionInput
 }
 
 export type ElectionUncheckedCreateWithoutVotingParticipationsInput = {
@@ -717,9 +717,9 @@ export type ElectionUncheckedCreateWithoutVotingParticipationsInput = {
   isActive?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
-  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
-  electionBodies?: Prisma.ElectionBodyUncheckedCreateNestedManyWithoutElectionInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutElectionInput
+  electionBodies?: Prisma.ElectionBodyUncheckedCreateNestedManyWithoutElectionInput
+  positions?: Prisma.PositionUncheckedCreateNestedManyWithoutElectionInput
 }
 
 export type ElectionCreateOrConnectWithoutVotingParticipationsInput = {
@@ -745,9 +745,9 @@ export type ElectionUpdateWithoutVotingParticipationsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
-  electionBodies?: Prisma.ElectionBodyUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutElectionNestedInput
+  electionBodies?: Prisma.ElectionBodyUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUpdateManyWithoutElectionNestedInput
 }
 
 export type ElectionUncheckedUpdateWithoutVotingParticipationsInput = {
@@ -758,9 +758,9 @@ export type ElectionUncheckedUpdateWithoutVotingParticipationsInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
-  electionBodies?: Prisma.ElectionBodyUncheckedUpdateManyWithoutElectionNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutElectionNestedInput
+  electionBodies?: Prisma.ElectionBodyUncheckedUpdateManyWithoutElectionNestedInput
+  positions?: Prisma.PositionUncheckedUpdateManyWithoutElectionNestedInput
 }
 
 
@@ -769,16 +769,16 @@ export type ElectionUncheckedUpdateWithoutVotingParticipationsInput = {
  */
 
 export type ElectionCountOutputType = {
-  positions: number
-  electionBodies: number
   acknowledgments: number
+  electionBodies: number
+  positions: number
   votingParticipations: number
 }
 
 export type ElectionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  positions?: boolean | ElectionCountOutputTypeCountPositionsArgs
-  electionBodies?: boolean | ElectionCountOutputTypeCountElectionBodiesArgs
   acknowledgments?: boolean | ElectionCountOutputTypeCountAcknowledgmentsArgs
+  electionBodies?: boolean | ElectionCountOutputTypeCountElectionBodiesArgs
+  positions?: boolean | ElectionCountOutputTypeCountPositionsArgs
   votingParticipations?: boolean | ElectionCountOutputTypeCountVotingParticipationsArgs
 }
 
@@ -795,8 +795,8 @@ export type ElectionCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
 /**
  * ElectionCountOutputType without action
  */
-export type ElectionCountOutputTypeCountPositionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PositionWhereInput
+export type ElectionCountOutputTypeCountAcknowledgmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ElectionAcknowledgmentWhereInput
 }
 
 /**
@@ -809,8 +809,8 @@ export type ElectionCountOutputTypeCountElectionBodiesArgs<ExtArgs extends runti
 /**
  * ElectionCountOutputType without action
  */
-export type ElectionCountOutputTypeCountAcknowledgmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ElectionAcknowledgmentWhereInput
+export type ElectionCountOutputTypeCountPositionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PositionWhereInput
 }
 
 /**
@@ -829,9 +829,9 @@ export type ElectionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   isActive?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  positions?: boolean | Prisma.Election$positionsArgs<ExtArgs>
-  electionBodies?: boolean | Prisma.Election$electionBodiesArgs<ExtArgs>
   acknowledgments?: boolean | Prisma.Election$acknowledgmentsArgs<ExtArgs>
+  electionBodies?: boolean | Prisma.Election$electionBodiesArgs<ExtArgs>
+  positions?: boolean | Prisma.Election$positionsArgs<ExtArgs>
   votingParticipations?: boolean | Prisma.Election$votingParticipationsArgs<ExtArgs>
   _count?: boolean | Prisma.ElectionCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["election"]>
@@ -868,9 +868,9 @@ export type ElectionSelectScalar = {
 
 export type ElectionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "startDate" | "endDate" | "isActive" | "createdAt" | "updatedAt", ExtArgs["result"]["election"]>
 export type ElectionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  positions?: boolean | Prisma.Election$positionsArgs<ExtArgs>
-  electionBodies?: boolean | Prisma.Election$electionBodiesArgs<ExtArgs>
   acknowledgments?: boolean | Prisma.Election$acknowledgmentsArgs<ExtArgs>
+  electionBodies?: boolean | Prisma.Election$electionBodiesArgs<ExtArgs>
+  positions?: boolean | Prisma.Election$positionsArgs<ExtArgs>
   votingParticipations?: boolean | Prisma.Election$votingParticipationsArgs<ExtArgs>
   _count?: boolean | Prisma.ElectionCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -880,9 +880,9 @@ export type ElectionIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $ElectionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Election"
   objects: {
-    positions: Prisma.$PositionPayload<ExtArgs>[]
-    electionBodies: Prisma.$ElectionBodyPayload<ExtArgs>[]
     acknowledgments: Prisma.$ElectionAcknowledgmentPayload<ExtArgs>[]
+    electionBodies: Prisma.$ElectionBodyPayload<ExtArgs>[]
+    positions: Prisma.$PositionPayload<ExtArgs>[]
     votingParticipations: Prisma.$VotingParticipationPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1287,9 +1287,9 @@ readonly fields: ElectionFieldRefs;
  */
 export interface Prisma__ElectionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  positions<T extends Prisma.Election$positionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Election$positionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  electionBodies<T extends Prisma.Election$electionBodiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Election$electionBodiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionBodyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   acknowledgments<T extends Prisma.Election$acknowledgmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Election$acknowledgmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionAcknowledgmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  electionBodies<T extends Prisma.Election$electionBodiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Election$electionBodiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionBodyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  positions<T extends Prisma.Election$positionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Election$positionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   votingParticipations<T extends Prisma.Election$votingParticipationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Election$votingParticipationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$VotingParticipationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1720,27 +1720,27 @@ export type ElectionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * Election.positions
+ * Election.acknowledgments
  */
-export type Election$positionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Election$acknowledgmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Position
+   * Select specific fields to fetch from the ElectionAcknowledgment
    */
-  select?: Prisma.PositionSelect<ExtArgs> | null
+  select?: Prisma.ElectionAcknowledgmentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Position
+   * Omit specific fields from the ElectionAcknowledgment
    */
-  omit?: Prisma.PositionOmit<ExtArgs> | null
+  omit?: Prisma.ElectionAcknowledgmentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PositionInclude<ExtArgs> | null
-  where?: Prisma.PositionWhereInput
-  orderBy?: Prisma.PositionOrderByWithRelationInput | Prisma.PositionOrderByWithRelationInput[]
-  cursor?: Prisma.PositionWhereUniqueInput
+  include?: Prisma.ElectionAcknowledgmentInclude<ExtArgs> | null
+  where?: Prisma.ElectionAcknowledgmentWhereInput
+  orderBy?: Prisma.ElectionAcknowledgmentOrderByWithRelationInput | Prisma.ElectionAcknowledgmentOrderByWithRelationInput[]
+  cursor?: Prisma.ElectionAcknowledgmentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.PositionScalarFieldEnum | Prisma.PositionScalarFieldEnum[]
+  distinct?: Prisma.ElectionAcknowledgmentScalarFieldEnum | Prisma.ElectionAcknowledgmentScalarFieldEnum[]
 }
 
 /**
@@ -1768,27 +1768,27 @@ export type Election$electionBodiesArgs<ExtArgs extends runtime.Types.Extensions
 }
 
 /**
- * Election.acknowledgments
+ * Election.positions
  */
-export type Election$acknowledgmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Election$positionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the ElectionAcknowledgment
+   * Select specific fields to fetch from the Position
    */
-  select?: Prisma.ElectionAcknowledgmentSelect<ExtArgs> | null
+  select?: Prisma.PositionSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the ElectionAcknowledgment
+   * Omit specific fields from the Position
    */
-  omit?: Prisma.ElectionAcknowledgmentOmit<ExtArgs> | null
+  omit?: Prisma.PositionOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ElectionAcknowledgmentInclude<ExtArgs> | null
-  where?: Prisma.ElectionAcknowledgmentWhereInput
-  orderBy?: Prisma.ElectionAcknowledgmentOrderByWithRelationInput | Prisma.ElectionAcknowledgmentOrderByWithRelationInput[]
-  cursor?: Prisma.ElectionAcknowledgmentWhereUniqueInput
+  include?: Prisma.PositionInclude<ExtArgs> | null
+  where?: Prisma.PositionWhereInput
+  orderBy?: Prisma.PositionOrderByWithRelationInput | Prisma.PositionOrderByWithRelationInput[]
+  cursor?: Prisma.PositionWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ElectionAcknowledgmentScalarFieldEnum | Prisma.ElectionAcknowledgmentScalarFieldEnum[]
+  distinct?: Prisma.PositionScalarFieldEnum | Prisma.PositionScalarFieldEnum[]
 }
 
 /**

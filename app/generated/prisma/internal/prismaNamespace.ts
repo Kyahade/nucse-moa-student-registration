@@ -1788,17 +1788,17 @@ export const PositionScalarFieldEnum = {
   id: 'id',
   name: 'name',
   maxVotes: 'maxVotes',
-  type: 'type',
-  scope: 'scope',
-  isVisible: 'isVisible',
-  sortOrder: 'sortOrder',
-  representativeYearLevel: 'representativeYearLevel',
   electionId: 'electionId',
-  electionBodyId: 'electionBodyId',
-  collegeId: 'collegeId',
-  programId: 'programId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  electionBodyId: 'electionBodyId',
+  isVisible: 'isVisible',
+  programId: 'programId',
+  sortOrder: 'sortOrder',
+  type: 'type',
+  collegeId: 'collegeId',
+  scope: 'scope',
+  representativeYearLevel: 'representativeYearLevel'
 } as const
 
 export type PositionScalarFieldEnum = (typeof PositionScalarFieldEnum)[keyof typeof PositionScalarFieldEnum]
@@ -1821,9 +1821,9 @@ export const CandidateScalarFieldEnum = {
   party: 'party',
   photoUrl: 'photoUrl',
   positionId: 'positionId',
-  politicalTeamId: 'politicalTeamId',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  politicalTeamId: 'politicalTeamId'
 } as const
 
 export type CandidateScalarFieldEnum = (typeof CandidateScalarFieldEnum)[keyof typeof CandidateScalarFieldEnum]
@@ -1833,12 +1833,12 @@ export const VoterScalarFieldEnum = {
   id: 'id',
   email: 'email',
   studentId: 'studentId',
-  programId: 'programId',
-  yearLevel: 'yearLevel',
   hasVoted: 'hasVoted',
-  isAdmin: 'isAdmin',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  isAdmin: 'isAdmin',
+  programId: 'programId',
+  yearLevel: 'yearLevel'
 } as const
 
 export type VoterScalarFieldEnum = (typeof VoterScalarFieldEnum)[keyof typeof VoterScalarFieldEnum]
@@ -1912,9 +1912,9 @@ export const VotingParticipationScalarFieldEnum = {
   id: 'id',
   voterId: 'voterId',
   electionId: 'electionId',
-  ballotId: 'ballotId',
   startedAt: 'startedAt',
-  submittedAt: 'submittedAt'
+  submittedAt: 'submittedAt',
+  ballotId: 'ballotId'
 } as const
 
 export type VotingParticipationScalarFieldEnum = (typeof VotingParticipationScalarFieldEnum)[keyof typeof VotingParticipationScalarFieldEnum]
@@ -1924,9 +1924,9 @@ export const SystemSettingScalarFieldEnum = {
   id: 'id',
   isLocked: 'isLocked',
   lockMessage: 'lockMessage',
+  updatedAt: 'updatedAt',
   registrationLocked: 'registrationLocked',
-  registrationMessage: 'registrationMessage',
-  updatedAt: 'updatedAt'
+  registrationMessage: 'registrationMessage'
 } as const
 
 export type SystemSettingScalarFieldEnum = (typeof SystemSettingScalarFieldEnum)[keyof typeof SystemSettingScalarFieldEnum]

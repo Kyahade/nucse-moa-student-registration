@@ -208,8 +208,8 @@ export type CollegeWhereInput = {
   name?: Prisma.StringFilter<"College"> | string
   createdAt?: Prisma.DateTimeFilter<"College"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"College"> | Date | string
-  programs?: Prisma.ProgramListRelationFilter
   positions?: Prisma.PositionListRelationFilter
+  programs?: Prisma.ProgramListRelationFilter
 }
 
 export type CollegeOrderByWithRelationInput = {
@@ -217,8 +217,8 @@ export type CollegeOrderByWithRelationInput = {
   name?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  programs?: Prisma.ProgramOrderByRelationAggregateInput
   positions?: Prisma.PositionOrderByRelationAggregateInput
+  programs?: Prisma.ProgramOrderByRelationAggregateInput
 }
 
 export type CollegeWhereUniqueInput = Prisma.AtLeast<{
@@ -229,8 +229,8 @@ export type CollegeWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.CollegeWhereInput | Prisma.CollegeWhereInput[]
   createdAt?: Prisma.DateTimeFilter<"College"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"College"> | Date | string
-  programs?: Prisma.ProgramListRelationFilter
   positions?: Prisma.PositionListRelationFilter
+  programs?: Prisma.ProgramListRelationFilter
 }, "id" | "name">
 
 export type CollegeOrderByWithAggregationInput = {
@@ -259,8 +259,8 @@ export type CollegeCreateInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  programs?: Prisma.ProgramCreateNestedManyWithoutCollegeInput
   positions?: Prisma.PositionCreateNestedManyWithoutCollegeInput
+  programs?: Prisma.ProgramCreateNestedManyWithoutCollegeInput
 }
 
 export type CollegeUncheckedCreateInput = {
@@ -268,16 +268,16 @@ export type CollegeUncheckedCreateInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  programs?: Prisma.ProgramUncheckedCreateNestedManyWithoutCollegeInput
   positions?: Prisma.PositionUncheckedCreateNestedManyWithoutCollegeInput
+  programs?: Prisma.ProgramUncheckedCreateNestedManyWithoutCollegeInput
 }
 
 export type CollegeUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  programs?: Prisma.ProgramUpdateManyWithoutCollegeNestedInput
   positions?: Prisma.PositionUpdateManyWithoutCollegeNestedInput
+  programs?: Prisma.ProgramUpdateManyWithoutCollegeNestedInput
 }
 
 export type CollegeUncheckedUpdateInput = {
@@ -285,8 +285,8 @@ export type CollegeUncheckedUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  programs?: Prisma.ProgramUncheckedUpdateManyWithoutCollegeNestedInput
   positions?: Prisma.PositionUncheckedUpdateManyWithoutCollegeNestedInput
+  programs?: Prisma.ProgramUncheckedUpdateManyWithoutCollegeNestedInput
 }
 
 export type CollegeCreateManyInput = {
@@ -476,13 +476,13 @@ export type CollegeUncheckedUpdateWithoutPositionsInput = {
  */
 
 export type CollegeCountOutputType = {
-  programs: number
   positions: number
+  programs: number
 }
 
 export type CollegeCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  programs?: boolean | CollegeCountOutputTypeCountProgramsArgs
   positions?: boolean | CollegeCountOutputTypeCountPositionsArgs
+  programs?: boolean | CollegeCountOutputTypeCountProgramsArgs
 }
 
 /**
@@ -498,15 +498,15 @@ export type CollegeCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * CollegeCountOutputType without action
  */
-export type CollegeCountOutputTypeCountProgramsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ProgramWhereInput
+export type CollegeCountOutputTypeCountPositionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PositionWhereInput
 }
 
 /**
  * CollegeCountOutputType without action
  */
-export type CollegeCountOutputTypeCountPositionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PositionWhereInput
+export type CollegeCountOutputTypeCountProgramsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProgramWhereInput
 }
 
 
@@ -515,8 +515,8 @@ export type CollegeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  programs?: boolean | Prisma.College$programsArgs<ExtArgs>
   positions?: boolean | Prisma.College$positionsArgs<ExtArgs>
+  programs?: boolean | Prisma.College$programsArgs<ExtArgs>
   _count?: boolean | Prisma.CollegeCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["college"]>
 
@@ -543,8 +543,8 @@ export type CollegeSelectScalar = {
 
 export type CollegeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "createdAt" | "updatedAt", ExtArgs["result"]["college"]>
 export type CollegeInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  programs?: boolean | Prisma.College$programsArgs<ExtArgs>
   positions?: boolean | Prisma.College$positionsArgs<ExtArgs>
+  programs?: boolean | Prisma.College$programsArgs<ExtArgs>
   _count?: boolean | Prisma.CollegeCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type CollegeIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -553,8 +553,8 @@ export type CollegeIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 export type $CollegePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "College"
   objects: {
-    programs: Prisma.$ProgramPayload<ExtArgs>[]
     positions: Prisma.$PositionPayload<ExtArgs>[]
+    programs: Prisma.$ProgramPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -955,8 +955,8 @@ readonly fields: CollegeFieldRefs;
  */
 export interface Prisma__CollegeClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  programs<T extends Prisma.College$programsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$programsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProgramPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   positions<T extends Prisma.College$positionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$positionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  programs<T extends Prisma.College$programsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.College$programsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProgramPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1383,30 +1383,6 @@ export type CollegeDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * College.programs
- */
-export type College$programsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Program
-   */
-  select?: Prisma.ProgramSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Program
-   */
-  omit?: Prisma.ProgramOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ProgramInclude<ExtArgs> | null
-  where?: Prisma.ProgramWhereInput
-  orderBy?: Prisma.ProgramOrderByWithRelationInput | Prisma.ProgramOrderByWithRelationInput[]
-  cursor?: Prisma.ProgramWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ProgramScalarFieldEnum | Prisma.ProgramScalarFieldEnum[]
-}
-
-/**
  * College.positions
  */
 export type College$positionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1428,6 +1404,30 @@ export type College$positionsArgs<ExtArgs extends runtime.Types.Extensions.Inter
   take?: number
   skip?: number
   distinct?: Prisma.PositionScalarFieldEnum | Prisma.PositionScalarFieldEnum[]
+}
+
+/**
+ * College.programs
+ */
+export type College$programsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Program
+   */
+  select?: Prisma.ProgramSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Program
+   */
+  omit?: Prisma.ProgramOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProgramInclude<ExtArgs> | null
+  where?: Prisma.ProgramWhereInput
+  orderBy?: Prisma.ProgramOrderByWithRelationInput | Prisma.ProgramOrderByWithRelationInput[]
+  cursor?: Prisma.ProgramWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProgramScalarFieldEnum | Prisma.ProgramScalarFieldEnum[]
 }
 
 /**

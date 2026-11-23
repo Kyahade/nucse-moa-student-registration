@@ -7,6 +7,214 @@ datasource db {
   provider = "postgresql"
 }
 
+model Election {
+  id                   Int                      @id @default(autoincrement())
+  name                 String
+  startDate            DateTime
+  endDate              DateTime
+  isActive             Boolean                  @default(false)
+  createdAt            DateTime                 @default(now())
+  updatedAt            DateTime                 @updatedAt
+  acknowledgments      ElectionAcknowledgment[]
+  electionBodies       ElectionBody[]
+  positions            Position[]
+  votingParticipations VotingParticipation[]
+}
+
+model College {
+  id        Int        @id @default(autoincrement())
+  name      String     @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  positions Position[]
+  programs  Program[]
+}
+
+model Program {
+  id                   Int                   @id @default(autoincrement())
+  name                 String
+  collegeId            Int
+  createdAt            DateTime              @default(now())
+  updatedAt            DateTime              @updatedAt
+  electionBodyPrograms ElectionBodyProgram[]
+  positions            Position[]
+  college              College               @relation(fields: [collegeId], references: [id])
+  voters               Voter[]
+
+  @@unique([collegeId, name])
+}
+
+model ElectionBody {
+  id         Int                   @id @default(autoincrement())
+  name       String
+  type       ElectionBodyType
+  electionId Int
+  createdAt  DateTime              @default(now())
+  updatedAt  DateTime              @updatedAt
+  election   Election              @relation(fields: [electionId], references: [id])
+  programs   ElectionBodyProgram[]
+  teams      PoliticalTeam[]
+  positions  Position[]
+}
+
+model ElectionBodyProgram {
+  electionBodyId Int
+  programId      Int
+  electionBody   ElectionBody @relation(fields: [electionBodyId], references: [id], onDelete: Cascade)
+  program        Program      @relation(fields: [programId], references: [id], onDelete: Cascade)
+
+  @@id([electionBodyId, programId])
+}
+
+model Position {
+  id                      Int               @id @default(autoincrement())
+  name                    String
+  maxVotes                Int               @default(1)
+  electionId              Int
+  createdAt               DateTime          @default(now())
+  updatedAt               DateTime          @updatedAt
+  electionBodyId          Int?
+  isVisible               Boolean           @default(true)
+  programId               Int?
+  sortOrder               Int               @default(0)
+  type                    PositionType      @default(EXECUTIVE)
+  collegeId               Int?
+  scope                   PositionScope     @default(UNIVERSITY)
+  representativeYearLevel Int?
+  ballotSelections        BallotSelection[]
+  candidates              Candidate[]
+  college                 College?          @relation(fields: [collegeId], references: [id])
+  electionBody            ElectionBody?     @relation(fields: [electionBodyId], references: [id])
+  election                Election          @relation(fields: [electionId], references: [id])
+  program                 Program?          @relation(fields: [programId], references: [id])
+}
+
+model PoliticalTeam {
+  id             Int          @id @default(autoincrement())
+  name           String
+  electionBodyId Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  candidates     Candidate[]
+  electionBody   ElectionBody @relation(fields: [electionBodyId], references: [id])
+}
+
+model Candidate {
+  id               Int               @id @default(autoincrement())
+  name             String
+  party            String?
+  photoUrl         String?
+  positionId       Int
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  politicalTeamId  Int?
+  ballotSelections BallotSelection[]
+  politicalTeam    PoliticalTeam?    @relation(fields: [politicalTeamId], references: [id])
+  position         Position          @relation(fields: [positionId], references: [id])
+}
+
+model Voter {
+  id                   Int                      @id @default(autoincrement())
+  email                String                   @unique
+  studentId            String?                  @unique
+  hasVoted             Boolean                  @default(false)
+  createdAt            DateTime                 @default(now())
+  updatedAt            DateTime                 @updatedAt
+  isAdmin              Boolean                  @default(false)
+  programId            Int?
+  yearLevel            Int?
+  acknowledgments      ElectionAcknowledgment[]
+  program              Program?                 @relation(fields: [programId], references: [id])
+  votingParticipations VotingParticipation[]
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  token     String   @unique
+  email     String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Ballot {
+  id            Int                  @id @default(autoincrement())
+  createdAt     DateTime             @default(now())
+  selections    BallotSelection[]
+  participation VotingParticipation?
+}
+
+model BallotSelection {
+  id          Int        @id @default(autoincrement())
+  ballotId    Int
+  candidateId Int?
+  positionId  Int
+  abstained   Boolean    @default(false)
+  ballot      Ballot     @relation(fields: [ballotId], references: [id])
+  candidate   Candidate? @relation(fields: [candidateId], references: [id])
+  position    Position   @relation(fields: [positionId], references: [id])
+
+  @@unique([ballotId, positionId])
+}
+
+model EmailVerificationCode {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  codeHash  String
+  expiresAt DateTime
+  attempts  Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model ElectionAcknowledgment {
+  id               Int                          @id @default(autoincrement())
+  voterId          Int
+  electionId       Int
+  studentIdEntered String
+  acceptedAt       DateTime                     @default(now())
+  election         Election                     @relation(fields: [electionId], references: [id], onDelete: Cascade)
+  voter            Voter                        @relation(fields: [voterId], references: [id], onDelete: Cascade)
+  items            ElectionAcknowledgmentItem[]
+
+  @@unique([voterId, electionId])
+  @@index([electionId])
+}
+
+model ElectionAcknowledgmentItem {
+  id               Int                    @id @default(autoincrement())
+  acknowledgmentId Int
+  sectionKey       String
+  documentVersion  String
+  acceptedAt       DateTime               @default(now())
+  acknowledgment   ElectionAcknowledgment @relation(fields: [acknowledgmentId], references: [id], onDelete: Cascade)
+
+  @@unique([acknowledgmentId, sectionKey])
+}
+
+model VotingParticipation {
+  id          Int       @id @default(autoincrement())
+  voterId     Int
+  electionId  Int
+  startedAt   DateTime  @default(now())
+  submittedAt DateTime?
+  ballotId    Int?      @unique
+  ballot      Ballot?   @relation(fields: [ballotId], references: [id])
+  election    Election  @relation(fields: [electionId], references: [id], onDelete: Cascade)
+  voter       Voter     @relation(fields: [voterId], references: [id], onDelete: Cascade)
+
+  @@unique([voterId, electionId])
+  @@index([electionId])
+  @@index([voterId])
+}
+
+model SystemSetting {
+  id                  Int      @id @default(1)
+  isLocked            Boolean  @default(false)
+  lockMessage         String   @default("The NU MOA Student Election System is temporarily locked by the Election Committee. Please wait for an official announcement.")
+  updatedAt           DateTime @updatedAt
+  registrationLocked  Boolean  @default(false)
+  registrationMessage String   @default("Student registration is currently closed. Please wait for an official announcement.")
+}
+
 enum ElectionBodyType {
   STUDENT_GOVERNMENT
   COUNCIL
@@ -24,251 +232,3 @@ enum PositionScope {
   SCHOOL
   COURSE
 }
-
-model Election {
-  id        Int      @id @default(autoincrement())
-  name      String
-  startDate DateTime
-  endDate   DateTime
-  isActive  Boolean  @default(false)
-
-  positions      Position[]
-  electionBodies ElectionBody[]
-  acknowledgments ElectionAcknowledgment[]
-   votingParticipations VotingParticipation[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model College {
-  id        Int        @id @default(autoincrement())
-  name      String     @unique
-  programs  Program[]
-  positions Position[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model Program {
-  id        Int     @id @default(autoincrement())
-  name      String
-  collegeId Int
-  college   College @relation(fields: [collegeId], references: [id])
-
-  voters               Voter[]
-  positions            Position[]
-  electionBodyPrograms ElectionBodyProgram[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([collegeId, name])
-}
-
-model ElectionBody {
-  id         Int              @id @default(autoincrement())
-  name       String
-  type       ElectionBodyType
-  electionId Int
-
-  election Election @relation(fields: [electionId], references: [id])
-
-  programs ElectionBodyProgram[]
-
-  positions Position[]
-  teams     PoliticalTeam[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model ElectionBodyProgram {
-  electionBodyId Int
-  programId      Int
-
-  electionBody ElectionBody @relation(fields: [electionBodyId], references: [id], onDelete: Cascade)
-  program      Program      @relation(fields: [programId], references: [id], onDelete: Cascade)
-
-  @@id([electionBodyId, programId])
-}
-
-model Position {
-  id       Int    @id @default(autoincrement())
-  name     String
-  maxVotes Int    @default(1)
-
-  type      PositionType  @default(EXECUTIVE)
-  scope     PositionScope @default(UNIVERSITY)
-  isVisible Boolean       @default(true)
-  sortOrder Int           @default(0)
-
-  // Used for year-level representative positions (2–6).
-  // Null means this is a regular position.
-  representativeYearLevel Int?
-
-  electionId Int
-  election   Election @relation(fields: [electionId], references: [id])
-
-  electionBodyId Int?
-  electionBody   ElectionBody? @relation(fields: [electionBodyId], references: [id])
-
-  collegeId Int?
-  college   College? @relation(fields: [collegeId], references: [id])
-
-  programId Int?
-  program   Program? @relation(fields: [programId], references: [id])
-
-  candidates       Candidate[]
-  ballotSelections BallotSelection[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model PoliticalTeam {
-  id   Int    @id @default(autoincrement())
-  name String
-
-  electionBodyId Int
-  electionBody   ElectionBody @relation(fields: [electionBodyId], references: [id])
-
-  candidates Candidate[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model Candidate {
-  id       Int     @id @default(autoincrement())
-  name     String
-  party    String?
-  photoUrl String?
-
-  positionId Int
-  position   Position @relation(fields: [positionId], references: [id])
-
-  politicalTeamId Int?
-  politicalTeam   PoliticalTeam? @relation(fields: [politicalTeamId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  ballotSelections BallotSelection[]
-}
-
-model Voter {
-  id        Int     @id @default(autoincrement())
-  email     String  @unique
-  studentId String? @unique
-
-  // The student's chosen/assigned program.
-  programId Int?
-  program   Program? @relation(fields: [programId], references: [id])
-  acknowledgments ElectionAcknowledgment[]
-  yearLevel Int?
-  votingParticipations VotingParticipation[]
-
-  hasVoted Boolean @default(false)
-  isAdmin  Boolean @default(false)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
-model Session {
-  id        Int      @id @default(autoincrement())
-  token     String   @unique
-  email     String
-  expiresAt DateTime
-
-  createdAt DateTime @default(now())
-}
-
-model Ballot {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-
-  selections    BallotSelection[]
-  participation VotingParticipation?
-}
-
-model BallotSelection {
-  id          Int     @id @default(autoincrement())
-  ballotId    Int
-  candidateId Int?
-  positionId  Int
-  abstained   Boolean @default(false)
-
-  ballot    Ballot     @relation(fields: [ballotId], references: [id])
-  candidate Candidate? @relation(fields: [candidateId], references: [id])
-  position  Position   @relation(fields: [positionId], references: [id])
-
-  @@unique([ballotId, positionId])
-}
-
-model EmailVerificationCode {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  codeHash  String
-  expiresAt DateTime
-  attempts  Int      @default(0)
-  createdAt DateTime @default(now())
-}
-
-model ElectionAcknowledgment {
-  id               Int      @id @default(autoincrement())
-  voterId          Int
-  electionId       Int
-  studentIdEntered String
-  acceptedAt       DateTime @default(now())
-
-  voter    Voter    @relation(fields: [voterId], references: [id], onDelete: Cascade)
-  election Election @relation(fields: [electionId], references: [id], onDelete: Cascade)
-
-  items ElectionAcknowledgmentItem[]
-
-  @@unique([voterId, electionId])
-  @@index([electionId])
-}
-
-model ElectionAcknowledgmentItem {
-  id               Int      @id @default(autoincrement())
-  acknowledgmentId Int
-  sectionKey       String
-  documentVersion  String
-  acceptedAt       DateTime @default(now())
-
-  acknowledgment ElectionAcknowledgment @relation(fields: [acknowledgmentId], references: [id], onDelete: Cascade)
-
-  @@unique([acknowledgmentId, sectionKey])
-}
-
-model VotingParticipation {
-  id          Int      @id @default(autoincrement())
-  voterId     Int
-  electionId  Int
-  ballotId    Int?     @unique
-  startedAt   DateTime @default(now())
-  submittedAt DateTime?
-
-  voter    Voter    @relation(fields: [voterId], references: [id], onDelete: Cascade)
-  election Election @relation(fields: [electionId], references: [id], onDelete: Cascade)
-  ballot   Ballot?  @relation(fields: [ballotId], references: [id], onDelete: SetNull)
-
-  @@unique([voterId, electionId])
-  @@index([electionId])
-  @@index([voterId])
-}
-
-
-model SystemSetting {
-  id                  Int      @id @default(1)
-  isLocked            Boolean  @default(false)
-  lockMessage         String   @default("The NU MOA Student Election System is temporarily locked by the Election Committee. Please wait for an official announcement.")
-  registrationLocked  Boolean  @default(false)
-  registrationMessage String   @default("Student registration is currently closed. Please wait for an official announcement.")
-  updatedAt           DateTime @updatedAt
-}
-

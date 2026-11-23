@@ -44,9 +44,9 @@ export type CandidateMinAggregateOutputType = {
   party: string | null
   photoUrl: string | null
   positionId: number | null
-  politicalTeamId: number | null
   createdAt: Date | null
   updatedAt: Date | null
+  politicalTeamId: number | null
 }
 
 export type CandidateMaxAggregateOutputType = {
@@ -55,9 +55,9 @@ export type CandidateMaxAggregateOutputType = {
   party: string | null
   photoUrl: string | null
   positionId: number | null
-  politicalTeamId: number | null
   createdAt: Date | null
   updatedAt: Date | null
+  politicalTeamId: number | null
 }
 
 export type CandidateCountAggregateOutputType = {
@@ -66,9 +66,9 @@ export type CandidateCountAggregateOutputType = {
   party: number
   photoUrl: number
   positionId: number
-  politicalTeamId: number
   createdAt: number
   updatedAt: number
+  politicalTeamId: number
   _all: number
 }
 
@@ -91,9 +91,9 @@ export type CandidateMinAggregateInputType = {
   party?: true
   photoUrl?: true
   positionId?: true
-  politicalTeamId?: true
   createdAt?: true
   updatedAt?: true
+  politicalTeamId?: true
 }
 
 export type CandidateMaxAggregateInputType = {
@@ -102,9 +102,9 @@ export type CandidateMaxAggregateInputType = {
   party?: true
   photoUrl?: true
   positionId?: true
-  politicalTeamId?: true
   createdAt?: true
   updatedAt?: true
+  politicalTeamId?: true
 }
 
 export type CandidateCountAggregateInputType = {
@@ -113,9 +113,9 @@ export type CandidateCountAggregateInputType = {
   party?: true
   photoUrl?: true
   positionId?: true
-  politicalTeamId?: true
   createdAt?: true
   updatedAt?: true
+  politicalTeamId?: true
   _all?: true
 }
 
@@ -211,9 +211,9 @@ export type CandidateGroupByOutputType = {
   party: string | null
   photoUrl: string | null
   positionId: number
-  politicalTeamId: number | null
   createdAt: Date
   updatedAt: Date
+  politicalTeamId: number | null
   _count: CandidateCountAggregateOutputType | null
   _avg: CandidateAvgAggregateOutputType | null
   _sum: CandidateSumAggregateOutputType | null
@@ -245,12 +245,12 @@ export type CandidateWhereInput = {
   party?: Prisma.StringNullableFilter<"Candidate"> | string | null
   photoUrl?: Prisma.StringNullableFilter<"Candidate"> | string | null
   positionId?: Prisma.IntFilter<"Candidate"> | number
-  politicalTeamId?: Prisma.IntNullableFilter<"Candidate"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Candidate"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Candidate"> | Date | string
-  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
-  politicalTeam?: Prisma.XOR<Prisma.PoliticalTeamNullableScalarRelationFilter, Prisma.PoliticalTeamWhereInput> | null
+  politicalTeamId?: Prisma.IntNullableFilter<"Candidate"> | number | null
   ballotSelections?: Prisma.BallotSelectionListRelationFilter
+  politicalTeam?: Prisma.XOR<Prisma.PoliticalTeamNullableScalarRelationFilter, Prisma.PoliticalTeamWhereInput> | null
+  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
 }
 
 export type CandidateOrderByWithRelationInput = {
@@ -259,12 +259,12 @@ export type CandidateOrderByWithRelationInput = {
   party?: Prisma.SortOrderInput | Prisma.SortOrder
   photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   positionId?: Prisma.SortOrder
-  politicalTeamId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  position?: Prisma.PositionOrderByWithRelationInput
-  politicalTeam?: Prisma.PoliticalTeamOrderByWithRelationInput
+  politicalTeamId?: Prisma.SortOrderInput | Prisma.SortOrder
   ballotSelections?: Prisma.BallotSelectionOrderByRelationAggregateInput
+  politicalTeam?: Prisma.PoliticalTeamOrderByWithRelationInput
+  position?: Prisma.PositionOrderByWithRelationInput
 }
 
 export type CandidateWhereUniqueInput = Prisma.AtLeast<{
@@ -276,12 +276,12 @@ export type CandidateWhereUniqueInput = Prisma.AtLeast<{
   party?: Prisma.StringNullableFilter<"Candidate"> | string | null
   photoUrl?: Prisma.StringNullableFilter<"Candidate"> | string | null
   positionId?: Prisma.IntFilter<"Candidate"> | number
-  politicalTeamId?: Prisma.IntNullableFilter<"Candidate"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Candidate"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Candidate"> | Date | string
-  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
-  politicalTeam?: Prisma.XOR<Prisma.PoliticalTeamNullableScalarRelationFilter, Prisma.PoliticalTeamWhereInput> | null
+  politicalTeamId?: Prisma.IntNullableFilter<"Candidate"> | number | null
   ballotSelections?: Prisma.BallotSelectionListRelationFilter
+  politicalTeam?: Prisma.XOR<Prisma.PoliticalTeamNullableScalarRelationFilter, Prisma.PoliticalTeamWhereInput> | null
+  position?: Prisma.XOR<Prisma.PositionScalarRelationFilter, Prisma.PositionWhereInput>
 }, "id">
 
 export type CandidateOrderByWithAggregationInput = {
@@ -290,9 +290,9 @@ export type CandidateOrderByWithAggregationInput = {
   party?: Prisma.SortOrderInput | Prisma.SortOrder
   photoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   positionId?: Prisma.SortOrder
-  politicalTeamId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  politicalTeamId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.CandidateCountOrderByAggregateInput
   _avg?: Prisma.CandidateAvgOrderByAggregateInput
   _max?: Prisma.CandidateMaxOrderByAggregateInput
@@ -309,9 +309,9 @@ export type CandidateScalarWhereWithAggregatesInput = {
   party?: Prisma.StringNullableWithAggregatesFilter<"Candidate"> | string | null
   photoUrl?: Prisma.StringNullableWithAggregatesFilter<"Candidate"> | string | null
   positionId?: Prisma.IntWithAggregatesFilter<"Candidate"> | number
-  politicalTeamId?: Prisma.IntNullableWithAggregatesFilter<"Candidate"> | number | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Candidate"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Candidate"> | Date | string
+  politicalTeamId?: Prisma.IntNullableWithAggregatesFilter<"Candidate"> | number | null
 }
 
 export type CandidateCreateInput = {
@@ -320,9 +320,9 @@ export type CandidateCreateInput = {
   photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  position: Prisma.PositionCreateNestedOneWithoutCandidatesInput
-  politicalTeam?: Prisma.PoliticalTeamCreateNestedOneWithoutCandidatesInput
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutCandidateInput
+  politicalTeam?: Prisma.PoliticalTeamCreateNestedOneWithoutCandidatesInput
+  position: Prisma.PositionCreateNestedOneWithoutCandidatesInput
 }
 
 export type CandidateUncheckedCreateInput = {
@@ -331,9 +331,9 @@ export type CandidateUncheckedCreateInput = {
   party?: string | null
   photoUrl?: string | null
   positionId: number
-  politicalTeamId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  politicalTeamId?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutCandidateInput
 }
 
@@ -343,9 +343,9 @@ export type CandidateUpdateInput = {
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  position?: Prisma.PositionUpdateOneRequiredWithoutCandidatesNestedInput
-  politicalTeam?: Prisma.PoliticalTeamUpdateOneWithoutCandidatesNestedInput
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutCandidateNestedInput
+  politicalTeam?: Prisma.PoliticalTeamUpdateOneWithoutCandidatesNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutCandidatesNestedInput
 }
 
 export type CandidateUncheckedUpdateInput = {
@@ -354,9 +354,9 @@ export type CandidateUncheckedUpdateInput = {
   party?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   positionId?: Prisma.IntFieldUpdateOperationsInput | number
-  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutCandidateNestedInput
 }
 
@@ -366,9 +366,9 @@ export type CandidateCreateManyInput = {
   party?: string | null
   photoUrl?: string | null
   positionId: number
-  politicalTeamId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  politicalTeamId?: number | null
 }
 
 export type CandidateUpdateManyMutationInput = {
@@ -385,9 +385,9 @@ export type CandidateUncheckedUpdateManyInput = {
   party?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   positionId?: Prisma.IntFieldUpdateOperationsInput | number
-  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CandidateListRelationFilter = {
@@ -406,9 +406,9 @@ export type CandidateCountOrderByAggregateInput = {
   party?: Prisma.SortOrder
   photoUrl?: Prisma.SortOrder
   positionId?: Prisma.SortOrder
-  politicalTeamId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  politicalTeamId?: Prisma.SortOrder
 }
 
 export type CandidateAvgOrderByAggregateInput = {
@@ -423,9 +423,9 @@ export type CandidateMaxOrderByAggregateInput = {
   party?: Prisma.SortOrder
   photoUrl?: Prisma.SortOrder
   positionId?: Prisma.SortOrder
-  politicalTeamId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  politicalTeamId?: Prisma.SortOrder
 }
 
 export type CandidateMinOrderByAggregateInput = {
@@ -434,9 +434,9 @@ export type CandidateMinOrderByAggregateInput = {
   party?: Prisma.SortOrder
   photoUrl?: Prisma.SortOrder
   positionId?: Prisma.SortOrder
-  politicalTeamId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  politicalTeamId?: Prisma.SortOrder
 }
 
 export type CandidateSumOrderByAggregateInput = {
@@ -560,8 +560,8 @@ export type CandidateCreateWithoutPositionInput = {
   photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  politicalTeam?: Prisma.PoliticalTeamCreateNestedOneWithoutCandidatesInput
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutCandidateInput
+  politicalTeam?: Prisma.PoliticalTeamCreateNestedOneWithoutCandidatesInput
 }
 
 export type CandidateUncheckedCreateWithoutPositionInput = {
@@ -569,9 +569,9 @@ export type CandidateUncheckedCreateWithoutPositionInput = {
   name: string
   party?: string | null
   photoUrl?: string | null
-  politicalTeamId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  politicalTeamId?: number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedCreateNestedManyWithoutCandidateInput
 }
 
@@ -610,9 +610,9 @@ export type CandidateScalarWhereInput = {
   party?: Prisma.StringNullableFilter<"Candidate"> | string | null
   photoUrl?: Prisma.StringNullableFilter<"Candidate"> | string | null
   positionId?: Prisma.IntFilter<"Candidate"> | number
-  politicalTeamId?: Prisma.IntNullableFilter<"Candidate"> | number | null
   createdAt?: Prisma.DateTimeFilter<"Candidate"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Candidate"> | Date | string
+  politicalTeamId?: Prisma.IntNullableFilter<"Candidate"> | number | null
 }
 
 export type CandidateCreateWithoutPoliticalTeamInput = {
@@ -621,8 +621,8 @@ export type CandidateCreateWithoutPoliticalTeamInput = {
   photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  position: Prisma.PositionCreateNestedOneWithoutCandidatesInput
   ballotSelections?: Prisma.BallotSelectionCreateNestedManyWithoutCandidateInput
+  position: Prisma.PositionCreateNestedOneWithoutCandidatesInput
 }
 
 export type CandidateUncheckedCreateWithoutPoliticalTeamInput = {
@@ -668,8 +668,8 @@ export type CandidateCreateWithoutBallotSelectionsInput = {
   photoUrl?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  position: Prisma.PositionCreateNestedOneWithoutCandidatesInput
   politicalTeam?: Prisma.PoliticalTeamCreateNestedOneWithoutCandidatesInput
+  position: Prisma.PositionCreateNestedOneWithoutCandidatesInput
 }
 
 export type CandidateUncheckedCreateWithoutBallotSelectionsInput = {
@@ -678,9 +678,9 @@ export type CandidateUncheckedCreateWithoutBallotSelectionsInput = {
   party?: string | null
   photoUrl?: string | null
   positionId: number
-  politicalTeamId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  politicalTeamId?: number | null
 }
 
 export type CandidateCreateOrConnectWithoutBallotSelectionsInput = {
@@ -705,8 +705,8 @@ export type CandidateUpdateWithoutBallotSelectionsInput = {
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  position?: Prisma.PositionUpdateOneRequiredWithoutCandidatesNestedInput
   politicalTeam?: Prisma.PoliticalTeamUpdateOneWithoutCandidatesNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutCandidatesNestedInput
 }
 
 export type CandidateUncheckedUpdateWithoutBallotSelectionsInput = {
@@ -715,9 +715,9 @@ export type CandidateUncheckedUpdateWithoutBallotSelectionsInput = {
   party?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   positionId?: Prisma.IntFieldUpdateOperationsInput | number
-  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CandidateCreateManyPositionInput = {
@@ -725,9 +725,9 @@ export type CandidateCreateManyPositionInput = {
   name: string
   party?: string | null
   photoUrl?: string | null
-  politicalTeamId?: number | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  politicalTeamId?: number | null
 }
 
 export type CandidateUpdateWithoutPositionInput = {
@@ -736,8 +736,8 @@ export type CandidateUpdateWithoutPositionInput = {
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  politicalTeam?: Prisma.PoliticalTeamUpdateOneWithoutCandidatesNestedInput
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutCandidateNestedInput
+  politicalTeam?: Prisma.PoliticalTeamUpdateOneWithoutCandidatesNestedInput
 }
 
 export type CandidateUncheckedUpdateWithoutPositionInput = {
@@ -745,9 +745,9 @@ export type CandidateUncheckedUpdateWithoutPositionInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   party?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   ballotSelections?: Prisma.BallotSelectionUncheckedUpdateManyWithoutCandidateNestedInput
 }
 
@@ -756,9 +756,9 @@ export type CandidateUncheckedUpdateManyWithoutPositionInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   party?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  politicalTeamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type CandidateCreateManyPoliticalTeamInput = {
@@ -777,8 +777,8 @@ export type CandidateUpdateWithoutPoliticalTeamInput = {
   photoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  position?: Prisma.PositionUpdateOneRequiredWithoutCandidatesNestedInput
   ballotSelections?: Prisma.BallotSelectionUpdateManyWithoutCandidateNestedInput
+  position?: Prisma.PositionUpdateOneRequiredWithoutCandidatesNestedInput
 }
 
 export type CandidateUncheckedUpdateWithoutPoliticalTeamInput = {
@@ -839,12 +839,12 @@ export type CandidateSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   party?: boolean
   photoUrl?: boolean
   positionId?: boolean
-  politicalTeamId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
-  politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
+  politicalTeamId?: boolean
   ballotSelections?: boolean | Prisma.Candidate$ballotSelectionsArgs<ExtArgs>
+  politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.CandidateCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["candidate"]>
 
@@ -854,11 +854,11 @@ export type CandidateSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   party?: boolean
   photoUrl?: boolean
   positionId?: boolean
-  politicalTeamId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  politicalTeamId?: boolean
   politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["candidate"]>
 
 export type CandidateSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -867,11 +867,11 @@ export type CandidateSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   party?: boolean
   photoUrl?: boolean
   positionId?: boolean
-  politicalTeamId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
+  politicalTeamId?: boolean
   politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["candidate"]>
 
 export type CandidateSelectScalar = {
@@ -880,33 +880,33 @@ export type CandidateSelectScalar = {
   party?: boolean
   photoUrl?: boolean
   positionId?: boolean
-  politicalTeamId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  politicalTeamId?: boolean
 }
 
-export type CandidateOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "party" | "photoUrl" | "positionId" | "politicalTeamId" | "createdAt" | "updatedAt", ExtArgs["result"]["candidate"]>
+export type CandidateOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "party" | "photoUrl" | "positionId" | "createdAt" | "updatedAt" | "politicalTeamId", ExtArgs["result"]["candidate"]>
 export type CandidateInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
-  politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
   ballotSelections?: boolean | Prisma.Candidate$ballotSelectionsArgs<ExtArgs>
+  politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.CandidateCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type CandidateIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
 }
 export type CandidateIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
   politicalTeam?: boolean | Prisma.Candidate$politicalTeamArgs<ExtArgs>
+  position?: boolean | Prisma.PositionDefaultArgs<ExtArgs>
 }
 
 export type $CandidatePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Candidate"
   objects: {
-    position: Prisma.$PositionPayload<ExtArgs>
-    politicalTeam: Prisma.$PoliticalTeamPayload<ExtArgs> | null
     ballotSelections: Prisma.$BallotSelectionPayload<ExtArgs>[]
+    politicalTeam: Prisma.$PoliticalTeamPayload<ExtArgs> | null
+    position: Prisma.$PositionPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -914,9 +914,9 @@ export type $CandidatePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     party: string | null
     photoUrl: string | null
     positionId: number
-    politicalTeamId: number | null
     createdAt: Date
     updatedAt: Date
+    politicalTeamId: number | null
   }, ExtArgs["result"]["candidate"]>
   composites: {}
 }
@@ -1311,9 +1311,9 @@ readonly fields: CandidateFieldRefs;
  */
 export interface Prisma__CandidateClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  position<T extends Prisma.PositionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PositionDefaultArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  politicalTeam<T extends Prisma.Candidate$politicalTeamArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Candidate$politicalTeamArgs<ExtArgs>>): Prisma.Prisma__PoliticalTeamClient<runtime.Types.Result.GetResult<Prisma.$PoliticalTeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   ballotSelections<T extends Prisma.Candidate$ballotSelectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Candidate$ballotSelectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BallotSelectionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  politicalTeam<T extends Prisma.Candidate$politicalTeamArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Candidate$politicalTeamArgs<ExtArgs>>): Prisma.Prisma__PoliticalTeamClient<runtime.Types.Result.GetResult<Prisma.$PoliticalTeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  position<T extends Prisma.PositionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PositionDefaultArgs<ExtArgs>>): Prisma.Prisma__PositionClient<runtime.Types.Result.GetResult<Prisma.$PositionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1348,9 +1348,9 @@ export interface CandidateFieldRefs {
   readonly party: Prisma.FieldRef<"Candidate", 'String'>
   readonly photoUrl: Prisma.FieldRef<"Candidate", 'String'>
   readonly positionId: Prisma.FieldRef<"Candidate", 'Int'>
-  readonly politicalTeamId: Prisma.FieldRef<"Candidate", 'Int'>
   readonly createdAt: Prisma.FieldRef<"Candidate", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Candidate", 'DateTime'>
+  readonly politicalTeamId: Prisma.FieldRef<"Candidate", 'Int'>
 }
     
 
@@ -1752,25 +1752,6 @@ export type CandidateDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Int
 }
 
 /**
- * Candidate.politicalTeam
- */
-export type Candidate$politicalTeamArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PoliticalTeam
-   */
-  select?: Prisma.PoliticalTeamSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PoliticalTeam
-   */
-  omit?: Prisma.PoliticalTeamOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PoliticalTeamInclude<ExtArgs> | null
-  where?: Prisma.PoliticalTeamWhereInput
-}
-
-/**
  * Candidate.ballotSelections
  */
 export type Candidate$ballotSelectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1792,6 +1773,25 @@ export type Candidate$ballotSelectionsArgs<ExtArgs extends runtime.Types.Extensi
   take?: number
   skip?: number
   distinct?: Prisma.BallotSelectionScalarFieldEnum | Prisma.BallotSelectionScalarFieldEnum[]
+}
+
+/**
+ * Candidate.politicalTeam
+ */
+export type Candidate$politicalTeamArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PoliticalTeam
+   */
+  select?: Prisma.PoliticalTeamSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PoliticalTeam
+   */
+  omit?: Prisma.PoliticalTeamOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PoliticalTeamInclude<ExtArgs> | null
+  where?: Prisma.PoliticalTeamWhereInput
 }
 
 /**

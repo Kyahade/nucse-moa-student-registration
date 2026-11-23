@@ -220,8 +220,8 @@ export type PoliticalTeamWhereInput = {
   electionBodyId?: Prisma.IntFilter<"PoliticalTeam"> | number
   createdAt?: Prisma.DateTimeFilter<"PoliticalTeam"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"PoliticalTeam"> | Date | string
-  electionBody?: Prisma.XOR<Prisma.ElectionBodyScalarRelationFilter, Prisma.ElectionBodyWhereInput>
   candidates?: Prisma.CandidateListRelationFilter
+  electionBody?: Prisma.XOR<Prisma.ElectionBodyScalarRelationFilter, Prisma.ElectionBodyWhereInput>
 }
 
 export type PoliticalTeamOrderByWithRelationInput = {
@@ -230,8 +230,8 @@ export type PoliticalTeamOrderByWithRelationInput = {
   electionBodyId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  electionBody?: Prisma.ElectionBodyOrderByWithRelationInput
   candidates?: Prisma.CandidateOrderByRelationAggregateInput
+  electionBody?: Prisma.ElectionBodyOrderByWithRelationInput
 }
 
 export type PoliticalTeamWhereUniqueInput = Prisma.AtLeast<{
@@ -243,8 +243,8 @@ export type PoliticalTeamWhereUniqueInput = Prisma.AtLeast<{
   electionBodyId?: Prisma.IntFilter<"PoliticalTeam"> | number
   createdAt?: Prisma.DateTimeFilter<"PoliticalTeam"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"PoliticalTeam"> | Date | string
-  electionBody?: Prisma.XOR<Prisma.ElectionBodyScalarRelationFilter, Prisma.ElectionBodyWhereInput>
   candidates?: Prisma.CandidateListRelationFilter
+  electionBody?: Prisma.XOR<Prisma.ElectionBodyScalarRelationFilter, Prisma.ElectionBodyWhereInput>
 }, "id">
 
 export type PoliticalTeamOrderByWithAggregationInput = {
@@ -275,8 +275,8 @@ export type PoliticalTeamCreateInput = {
   name: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  electionBody: Prisma.ElectionBodyCreateNestedOneWithoutTeamsInput
   candidates?: Prisma.CandidateCreateNestedManyWithoutPoliticalTeamInput
+  electionBody: Prisma.ElectionBodyCreateNestedOneWithoutTeamsInput
 }
 
 export type PoliticalTeamUncheckedCreateInput = {
@@ -292,8 +292,8 @@ export type PoliticalTeamUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  electionBody?: Prisma.ElectionBodyUpdateOneRequiredWithoutTeamsNestedInput
   candidates?: Prisma.CandidateUpdateManyWithoutPoliticalTeamNestedInput
+  electionBody?: Prisma.ElectionBodyUpdateOneRequiredWithoutTeamsNestedInput
 }
 
 export type PoliticalTeamUncheckedUpdateInput = {
@@ -598,8 +598,8 @@ export type PoliticalTeamSelect<ExtArgs extends runtime.Types.Extensions.Interna
   electionBodyId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  electionBody?: boolean | Prisma.ElectionBodyDefaultArgs<ExtArgs>
   candidates?: boolean | Prisma.PoliticalTeam$candidatesArgs<ExtArgs>
+  electionBody?: boolean | Prisma.ElectionBodyDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.PoliticalTeamCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["politicalTeam"]>
 
@@ -631,8 +631,8 @@ export type PoliticalTeamSelectScalar = {
 
 export type PoliticalTeamOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "electionBodyId" | "createdAt" | "updatedAt", ExtArgs["result"]["politicalTeam"]>
 export type PoliticalTeamInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  electionBody?: boolean | Prisma.ElectionBodyDefaultArgs<ExtArgs>
   candidates?: boolean | Prisma.PoliticalTeam$candidatesArgs<ExtArgs>
+  electionBody?: boolean | Prisma.ElectionBodyDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.PoliticalTeamCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type PoliticalTeamIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -645,8 +645,8 @@ export type PoliticalTeamIncludeUpdateManyAndReturn<ExtArgs extends runtime.Type
 export type $PoliticalTeamPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "PoliticalTeam"
   objects: {
-    electionBody: Prisma.$ElectionBodyPayload<ExtArgs>
     candidates: Prisma.$CandidatePayload<ExtArgs>[]
+    electionBody: Prisma.$ElectionBodyPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1048,8 +1048,8 @@ readonly fields: PoliticalTeamFieldRefs;
  */
 export interface Prisma__PoliticalTeamClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  electionBody<T extends Prisma.ElectionBodyDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionBodyDefaultArgs<ExtArgs>>): Prisma.Prisma__ElectionBodyClient<runtime.Types.Result.GetResult<Prisma.$ElectionBodyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   candidates<T extends Prisma.PoliticalTeam$candidatesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PoliticalTeam$candidatesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CandidatePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  electionBody<T extends Prisma.ElectionBodyDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ElectionBodyDefaultArgs<ExtArgs>>): Prisma.Prisma__ElectionBodyClient<runtime.Types.Result.GetResult<Prisma.$ElectionBodyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
