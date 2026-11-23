@@ -4,6 +4,26 @@ import { prisma } from "@/lib/prisma";
 
 export async function POST(request: Request) {
   try {
+    // Check whether registration is locked.
+    const settings = await prisma.systemSetting.findUnique({
+      where: { id: 1 },
+      select: {
+        registrationLocked: true,
+        registrationMessage: true,
+      },
+    });
+
+    if (settings?.registrationLocked) {
+      return NextResponse.json(
+        {
+          error:
+            settings.registrationMessage ||
+            "Student registration is currently closed.",
+        },
+        { status: 403 }
+      );
+    }
+
     const body = await request.json();
 
     const email = String(body.email ?? "").trim().toLowerCase();
@@ -11,7 +31,6 @@ export async function POST(request: Request) {
     const programId = Number(body.programId);
     const yearLevel = Number(body.yearLevel);
 
-    // Validate NU MOA student email
     if (!/^[a-zA-Z0-9._%+-]+@students\.nu-moa\.edu\.ph$/i.test(email)) {
       return NextResponse.json(
         { error: "Use your NU MOA student email address." },
@@ -19,8 +38,14 @@ export async function POST(request: Request) {
       );
     }
 
-    if (!studentId || !Number.isInteger(programId) || programId <= 0 ||
-        !Number.isInteger(yearLevel) || yearLevel < 1 || yearLevel > 6) {
+    if (
+      !studentId ||
+      !Number.isInteger(programId) ||
+      programId <= 0 ||
+      !Number.isInteger(yearLevel) ||
+      yearLevel < 1 ||
+      yearLevel > 6
+    ) {
       return NextResponse.json(
         { error: "Please provide valid registration details." },
         { status: 400 }
@@ -71,7 +96,7 @@ export async function POST(request: Request) {
       { message: "Registration successful.", voter },
       { status: 201 }
     );
-    } catch (error) {
+  } catch (error) {
     if (
       typeof error === "object" &&
       error !== null &&

@@ -262,9 +262,13 @@ model VotingParticipation {
   @@index([voterId])
 }
 
+
 model SystemSetting {
-  id        Int      @id @default(1)
-  isLocked  Boolean  @default(false)
-  lockMessage String @default("The NU MOA Student Election System is temporarily locked by the Election Committee. Please wait for an official announcement.")
-  updatedAt DateTime @updatedAt
+  id                  Int      @id @default(1)
+  isLocked            Boolean  @default(false)
+  lockMessage         String   @default("The NU MOA Student Election System is temporarily locked by the Election Committee. Please wait for an official announcement.")
+  registrationLocked  Boolean  @default(false)
+  registrationMessage String   @default("Student registration is currently closed. Please wait for an official announcement.")
+  updatedAt           DateTime @updatedAt
 }
+

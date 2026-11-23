@@ -38,6 +38,8 @@ export type SystemSettingMinAggregateOutputType = {
   id: number | null
   isLocked: boolean | null
   lockMessage: string | null
+  registrationLocked: boolean | null
+  registrationMessage: string | null
   updatedAt: Date | null
 }
 
@@ -45,6 +47,8 @@ export type SystemSettingMaxAggregateOutputType = {
   id: number | null
   isLocked: boolean | null
   lockMessage: string | null
+  registrationLocked: boolean | null
+  registrationMessage: string | null
   updatedAt: Date | null
 }
 
@@ -52,6 +56,8 @@ export type SystemSettingCountAggregateOutputType = {
   id: number
   isLocked: number
   lockMessage: number
+  registrationLocked: number
+  registrationMessage: number
   updatedAt: number
   _all: number
 }
@@ -69,6 +75,8 @@ export type SystemSettingMinAggregateInputType = {
   id?: true
   isLocked?: true
   lockMessage?: true
+  registrationLocked?: true
+  registrationMessage?: true
   updatedAt?: true
 }
 
@@ -76,6 +84,8 @@ export type SystemSettingMaxAggregateInputType = {
   id?: true
   isLocked?: true
   lockMessage?: true
+  registrationLocked?: true
+  registrationMessage?: true
   updatedAt?: true
 }
 
@@ -83,6 +93,8 @@ export type SystemSettingCountAggregateInputType = {
   id?: true
   isLocked?: true
   lockMessage?: true
+  registrationLocked?: true
+  registrationMessage?: true
   updatedAt?: true
   _all?: true
 }
@@ -177,6 +189,8 @@ export type SystemSettingGroupByOutputType = {
   id: number
   isLocked: boolean
   lockMessage: string
+  registrationLocked: boolean
+  registrationMessage: string
   updatedAt: Date
   _count: SystemSettingCountAggregateOutputType | null
   _avg: SystemSettingAvgAggregateOutputType | null
@@ -207,6 +221,8 @@ export type SystemSettingWhereInput = {
   id?: Prisma.IntFilter<"SystemSetting"> | number
   isLocked?: Prisma.BoolFilter<"SystemSetting"> | boolean
   lockMessage?: Prisma.StringFilter<"SystemSetting"> | string
+  registrationLocked?: Prisma.BoolFilter<"SystemSetting"> | boolean
+  registrationMessage?: Prisma.StringFilter<"SystemSetting"> | string
   updatedAt?: Prisma.DateTimeFilter<"SystemSetting"> | Date | string
 }
 
@@ -214,6 +230,8 @@ export type SystemSettingOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   isLocked?: Prisma.SortOrder
   lockMessage?: Prisma.SortOrder
+  registrationLocked?: Prisma.SortOrder
+  registrationMessage?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -224,6 +242,8 @@ export type SystemSettingWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.SystemSettingWhereInput | Prisma.SystemSettingWhereInput[]
   isLocked?: Prisma.BoolFilter<"SystemSetting"> | boolean
   lockMessage?: Prisma.StringFilter<"SystemSetting"> | string
+  registrationLocked?: Prisma.BoolFilter<"SystemSetting"> | boolean
+  registrationMessage?: Prisma.StringFilter<"SystemSetting"> | string
   updatedAt?: Prisma.DateTimeFilter<"SystemSetting"> | Date | string
 }, "id">
 
@@ -231,6 +251,8 @@ export type SystemSettingOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   isLocked?: Prisma.SortOrder
   lockMessage?: Prisma.SortOrder
+  registrationLocked?: Prisma.SortOrder
+  registrationMessage?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.SystemSettingCountOrderByAggregateInput
   _avg?: Prisma.SystemSettingAvgOrderByAggregateInput
@@ -246,6 +268,8 @@ export type SystemSettingScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"SystemSetting"> | number
   isLocked?: Prisma.BoolWithAggregatesFilter<"SystemSetting"> | boolean
   lockMessage?: Prisma.StringWithAggregatesFilter<"SystemSetting"> | string
+  registrationLocked?: Prisma.BoolWithAggregatesFilter<"SystemSetting"> | boolean
+  registrationMessage?: Prisma.StringWithAggregatesFilter<"SystemSetting"> | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"SystemSetting"> | Date | string
 }
 
@@ -253,6 +277,8 @@ export type SystemSettingCreateInput = {
   id?: number
   isLocked?: boolean
   lockMessage?: string
+  registrationLocked?: boolean
+  registrationMessage?: string
   updatedAt?: Date | string
 }
 
@@ -260,6 +286,8 @@ export type SystemSettingUncheckedCreateInput = {
   id?: number
   isLocked?: boolean
   lockMessage?: string
+  registrationLocked?: boolean
+  registrationMessage?: string
   updatedAt?: Date | string
 }
 
@@ -267,6 +295,8 @@ export type SystemSettingUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   isLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   lockMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  registrationLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  registrationMessage?: Prisma.StringFieldUpdateOperationsInput | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -274,6 +304,8 @@ export type SystemSettingUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   isLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   lockMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  registrationLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  registrationMessage?: Prisma.StringFieldUpdateOperationsInput | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -281,6 +313,8 @@ export type SystemSettingCreateManyInput = {
   id?: number
   isLocked?: boolean
   lockMessage?: string
+  registrationLocked?: boolean
+  registrationMessage?: string
   updatedAt?: Date | string
 }
 
@@ -288,6 +322,8 @@ export type SystemSettingUpdateManyMutationInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   isLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   lockMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  registrationLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  registrationMessage?: Prisma.StringFieldUpdateOperationsInput | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -295,6 +331,8 @@ export type SystemSettingUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   isLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
   lockMessage?: Prisma.StringFieldUpdateOperationsInput | string
+  registrationLocked?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  registrationMessage?: Prisma.StringFieldUpdateOperationsInput | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -302,6 +340,8 @@ export type SystemSettingCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   isLocked?: Prisma.SortOrder
   lockMessage?: Prisma.SortOrder
+  registrationLocked?: Prisma.SortOrder
+  registrationMessage?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -313,6 +353,8 @@ export type SystemSettingMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   isLocked?: Prisma.SortOrder
   lockMessage?: Prisma.SortOrder
+  registrationLocked?: Prisma.SortOrder
+  registrationMessage?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -320,6 +362,8 @@ export type SystemSettingMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   isLocked?: Prisma.SortOrder
   lockMessage?: Prisma.SortOrder
+  registrationLocked?: Prisma.SortOrder
+  registrationMessage?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -333,6 +377,8 @@ export type SystemSettingSelect<ExtArgs extends runtime.Types.Extensions.Interna
   id?: boolean
   isLocked?: boolean
   lockMessage?: boolean
+  registrationLocked?: boolean
+  registrationMessage?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["systemSetting"]>
 
@@ -340,6 +386,8 @@ export type SystemSettingSelectCreateManyAndReturn<ExtArgs extends runtime.Types
   id?: boolean
   isLocked?: boolean
   lockMessage?: boolean
+  registrationLocked?: boolean
+  registrationMessage?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["systemSetting"]>
 
@@ -347,6 +395,8 @@ export type SystemSettingSelectUpdateManyAndReturn<ExtArgs extends runtime.Types
   id?: boolean
   isLocked?: boolean
   lockMessage?: boolean
+  registrationLocked?: boolean
+  registrationMessage?: boolean
   updatedAt?: boolean
 }, ExtArgs["result"]["systemSetting"]>
 
@@ -354,10 +404,12 @@ export type SystemSettingSelectScalar = {
   id?: boolean
   isLocked?: boolean
   lockMessage?: boolean
+  registrationLocked?: boolean
+  registrationMessage?: boolean
   updatedAt?: boolean
 }
 
-export type SystemSettingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "isLocked" | "lockMessage" | "updatedAt", ExtArgs["result"]["systemSetting"]>
+export type SystemSettingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "isLocked" | "lockMessage" | "registrationLocked" | "registrationMessage" | "updatedAt", ExtArgs["result"]["systemSetting"]>
 
 export type $SystemSettingPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "SystemSetting"
@@ -366,6 +418,8 @@ export type $SystemSettingPayload<ExtArgs extends runtime.Types.Extensions.Inter
     id: number
     isLocked: boolean
     lockMessage: string
+    registrationLocked: boolean
+    registrationMessage: string
     updatedAt: Date
   }, ExtArgs["result"]["systemSetting"]>
   composites: {}
@@ -793,6 +847,8 @@ export interface SystemSettingFieldRefs {
   readonly id: Prisma.FieldRef<"SystemSetting", 'Int'>
   readonly isLocked: Prisma.FieldRef<"SystemSetting", 'Boolean'>
   readonly lockMessage: Prisma.FieldRef<"SystemSetting", 'String'>
+  readonly registrationLocked: Prisma.FieldRef<"SystemSetting", 'Boolean'>
+  readonly registrationMessage: Prisma.FieldRef<"SystemSetting", 'String'>
   readonly updatedAt: Prisma.FieldRef<"SystemSetting", 'DateTime'>
 }
     

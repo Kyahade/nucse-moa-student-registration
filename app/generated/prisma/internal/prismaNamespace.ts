@@ -1924,6 +1924,8 @@ export const SystemSettingScalarFieldEnum = {
   id: 'id',
   isLocked: 'isLocked',
   lockMessage: 'lockMessage',
+  registrationLocked: 'registrationLocked',
+  registrationMessage: 'registrationMessage',
   updatedAt: 'updatedAt'
 } as const
 
