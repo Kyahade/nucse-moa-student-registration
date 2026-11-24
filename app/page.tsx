@@ -25,6 +25,8 @@ type RegistrationReceipt = {
   registeredAt: string;
 };
 
+const MAX_COR_SIZE = 4 * 1024 * 1024;
+
 export default function RegistrationPage() {
   const [colleges, setColleges] = useState<College[]>([]);
   const [collegeId, setCollegeId] = useState("");
@@ -32,75 +34,117 @@ export default function RegistrationPage() {
   const [email, setEmail] = useState("");
   const [studentId, setStudentId] = useState("");
   const [yearLevel, setYearLevel] = useState("");
+  const [corFile, setCorFile] = useState<File | null>(null);
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
   const [registrationStatusLoading, setRegistrationStatusLoading] =
-  useState(true);
-const [registrationLocked, setRegistrationLocked] = useState(false);
-const [registrationMessage, setRegistrationMessage] = useState(
-  "Student registration is currently closed. Please wait for an official announcement."
-);
-const [registrationStatusError, setRegistrationStatusError] = useState(false);
+    useState(true);
+  const [registrationLocked, setRegistrationLocked] = useState(false);
+  const [registrationMessage, setRegistrationMessage] = useState(
+    "Student registration is currently closed. Please wait for an official announcement."
+  );
+  const [registrationStatusError, setRegistrationStatusError] =
+    useState(false);
+
   const [receipt, setReceipt] = useState<RegistrationReceipt | null>(null);
 
   useEffect(() => {
-  async function loadRegistrationStatus() {
-    try {
-      const statusResponse = await fetch("/api/registration-status");
-      const statusData = await statusResponse.json();
+    async function loadRegistrationStatus() {
+      try {
+        const statusResponse = await fetch("/api/registration-status");
+        const statusData = await statusResponse.json();
 
-      if (!statusResponse.ok) {
-        throw new Error("Unable to verify registration status.");
-      }
-
-      setRegistrationLocked(statusData.isLocked ?? false);
-      setRegistrationMessage(
-        statusData.message ||
-          "Student registration is currently closed. Please wait for an official announcement."
-      );
-
-      if (!statusData.isLocked) {
-        const academicResponse = await fetch("/api/academic-data");
-
-        if (!academicResponse.ok) {
-          throw new Error("Unable to load colleges and programs.");
+        if (!statusResponse.ok) {
+          throw new Error("Unable to verify registration status.");
         }
 
-        const academicData = await academicResponse.json();
-        setColleges(academicData.colleges ?? []);
-      }
-    } catch {
-      setRegistrationStatusError(true);
-    } finally {
-      setRegistrationStatusLoading(false);
-    }
-  }
+        setRegistrationLocked(statusData.isLocked ?? false);
+        setRegistrationMessage(
+          statusData.message ||
+            "Student registration is currently closed. Please wait for an official announcement."
+        );
 
-  loadRegistrationStatus();
-}, []);
+        if (!statusData.isLocked) {
+          const academicResponse = await fetch("/api/academic-data");
+
+          if (!academicResponse.ok) {
+            throw new Error("Unable to load colleges and programs.");
+          }
+
+          const academicData = await academicResponse.json();
+          setColleges(academicData.colleges ?? []);
+        }
+      } catch {
+        setRegistrationStatusError(true);
+      } finally {
+        setRegistrationStatusLoading(false);
+      }
+    }
+
+    loadRegistrationStatus();
+  }, []);
 
   const selectedCollege = colleges.find(
     (college) => college.id === Number(collegeId)
   );
 
+  function handleCorFileChange(file: File | null) {
+    setError("");
+
+    if (!file) {
+      setCorFile(null);
+      return;
+    }
+
+    const extension = file.name.split(".").pop()?.toLowerCase();
+
+    if (!["pdf", "jpg", "jpeg", "png"].includes(extension ?? "")) {
+      setCorFile(null);
+      setError("Only PDF, JPG, and PNG files are accepted.");
+      return;
+    }
+
+    if (file.size === 0) {
+      setCorFile(null);
+      setError("The selected COR file is empty.");
+      return;
+    }
+
+    if (file.size > MAX_COR_SIZE) {
+      setCorFile(null);
+      setError("Your COR file must not exceed 4 MB.");
+      return;
+    }
+
+    setCorFile(file);
+  }
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    setLoading(true);
     setError("");
 
+    if (!corFile) {
+      setError("Please upload your Certificate of Registration (COR).");
+      return;
+    }
+
+    setLoading(true);
+
     try {
+      const formData = new FormData();
+
+      formData.append("email", email.trim().toLowerCase());
+      formData.append("studentId", studentId.trim());
+      formData.append("programId", programId);
+      formData.append("yearLevel", yearLevel);
+      formData.append("corFile", corFile);
+
       const response = await fetch("/api/register", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email.trim().toLowerCase(),
-          studentId: studentId.trim(),
-          programId,
-          yearLevel,
-        }),
+        body: formData,
       });
 
       const data = await response.json();
@@ -147,6 +191,7 @@ const [registrationStatusError, setRegistrationStatusError] = useState(false);
     setCollegeId("");
     setProgramId("");
     setYearLevel("");
+    setCorFile(null);
     setError("");
   }
 
@@ -305,45 +350,50 @@ const [registrationStatusError, setRegistrationStatusError] = useState(false);
           </div>
         </div>
       ) : registrationStatusLoading ? (
-  <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-10 text-center shadow-2xl">
-    <h2 className="text-xl font-bold text-[#142b50]">
-      Checking Registration Status...
-    </h2>
-    <p className="mt-3 text-sm text-slate-500">
-      Please wait while we verify registration availability.
-    </p>
-  </div>
-) : registrationStatusError ? (
-  <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-10 text-center shadow-2xl">
-    <h2 className="text-xl font-bold text-red-700">
-      Registration Status Unavailable
-    </h2>
-    <p className="mt-3 text-sm text-slate-600">
-      We cannot verify whether registration is open right now. Please try again later.
-    </p>
-  </div>
-) : registrationLocked ? (
-  <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-10 text-center shadow-2xl">
-    <Image
-      src="/nu-logo.svg"
-      alt="National University logo"
-      width={120}
-      height={120}
-      className="mx-auto mb-5 h-28 w-28 object-contain"
-    />
-    <h2 className="text-2xl font-extrabold text-[#142b50]">
-      Registration Closed
-    </h2>
-    <p className="mt-4 text-sm leading-6 text-slate-600">
-      {registrationMessage}
-    </p>
-    <p className="mt-8 text-xs font-bold tracking-widest text-[#b18d36]">
-      NATIONAL UNIVERSITY – MALL OF ASIA
-    </p>
-  </div>
-) : (
-  /* Registration Form */
-        
+        <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-10 text-center shadow-2xl">
+          <h2 className="text-xl font-bold text-[#142b50]">
+            Checking Registration Status...
+          </h2>
+
+          <p className="mt-3 text-sm text-slate-500">
+            Please wait while we verify registration availability.
+          </p>
+        </div>
+      ) : registrationStatusError ? (
+        <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-10 text-center shadow-2xl">
+          <h2 className="text-xl font-bold text-red-700">
+            Registration Status Unavailable
+          </h2>
+
+          <p className="mt-3 text-sm text-slate-600">
+            We cannot verify whether registration is open right now. Please
+            try again later.
+          </p>
+        </div>
+      ) : registrationLocked ? (
+        <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-10 text-center shadow-2xl">
+          <Image
+            src="/nu-logo.svg"
+            alt="National University logo"
+            width={120}
+            height={120}
+            className="mx-auto mb-5 h-28 w-28 object-contain"
+          />
+
+          <h2 className="text-2xl font-extrabold text-[#142b50]">
+            Registration Closed
+          </h2>
+
+          <p className="mt-4 text-sm leading-6 text-slate-600">
+            {registrationMessage}
+          </p>
+
+          <p className="mt-8 text-xs font-bold tracking-widest text-[#b18d36]">
+            NATIONAL UNIVERSITY – MALL OF ASIA
+          </p>
+        </div>
+      ) : (
+        /* Registration Form */
         <div className="relative z-10 w-full max-w-lg">
           <div className="mb-8 text-center">
             <div className="mb-4 flex justify-center">
@@ -377,7 +427,8 @@ const [registrationStatusError, setRegistrationStatusError] = useState(false);
               </h2>
 
               <p className="mt-3 text-sm leading-6 text-slate-500">
-                Register your student information to access the NU MOA Student Elections.
+                Register your student information to access the NU MOA Student
+                Elections.
               </p>
             </div>
 
@@ -415,8 +466,19 @@ const [registrationStatusError, setRegistrationStatusError] = useState(false);
                 <input
                   required
                   value={studentId}
-                  onChange={(e) => setStudentId(e.target.value)}
-                  placeholder="Enter your student ID"
+                  onChange={(e) => {
+                    const digits = e.target.value.replace(/\D/g, "").slice(0, 14);
+                    const formatted =
+                      digits.length > 4
+                        ? `${digits.slice(0, 4)}-${digits.slice(4)}`
+                        : digits;
+
+                    setStudentId(formatted);
+                  }}
+                  placeholder="2023-123456"
+                  maxLength={15}
+                  pattern="[0-9]{4}-[0-9]{6,10}"
+                  title="Format: YYYY-XXXXXX (6–10 digits after the hyphen)"
                   className="w-full rounded-xl border border-slate-300 bg-white px-4 py-4 text-sm text-slate-800 outline-none transition focus:border-[#183b70] focus:ring-2 focus:ring-[#183b70]/15"
                 />
               </div>
@@ -499,9 +561,67 @@ const [registrationStatusError, setRegistrationStatusError] = useState(false);
                 </select>
               </div>
 
+              {/* COR Upload */}
+              <div>
+                <label className="mb-2 block text-sm font-semibold text-[#263b5d]">
+                  Certificate of Registration (COR)
+                  <span className="ml-1 text-red-600">*</span>
+                </label>
+
+                <p className="mb-3 text-xs leading-5 text-slate-500">
+                  Upload a clear copy of your current Certificate of
+                  Registration. Accepted formats: PDF, JPG, and PNG. Maximum
+                  file size: 4 MB.
+                </p>
+
+                <input
+                  type="file"
+                  required
+                  accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+                  onChange={(e) =>
+                    handleCorFileChange(e.target.files?.[0] ?? null)
+                  }
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-sm text-slate-700 file:mr-3 file:rounded-lg file:border-0 file:bg-[#142b50] file:px-4 file:py-2 file:text-xs file:font-bold file:text-white hover:file:bg-[#1d416f]"
+                />
+
+                {corFile && (
+                  <div className="mt-3 rounded-lg border border-green-200 bg-green-50 p-3">
+                    <p className="break-all text-sm font-semibold text-green-800">
+                      {corFile.name}
+                    </p>
+
+                    <p className="mt-1 text-xs text-green-700">
+                      {(corFile.size / (1024 * 1024)).toFixed(2)} MB · Ready
+                      to upload
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setCorFile(null);
+                        setError("");
+                        const fileInput = document.getElementById(
+                          "corFile"
+                        ) as HTMLInputElement | null;
+
+                        if (fileInput) {
+                          fileInput.value = "";
+                        }
+                      }}
+                      className="mt-2 text-xs font-bold text-red-600 hover:underline"
+                    >
+                      Remove file
+                    </button>
+                  </div>
+                )}
+              </div>
+
               {/* Error Message */}
               {error && (
-                <div className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+                <div
+                  role="alert"
+                  className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700"
+                >
                   {error}
                 </div>
               )}

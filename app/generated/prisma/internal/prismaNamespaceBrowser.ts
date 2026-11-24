@@ -67,7 +67,8 @@ export const ModelName = {
   ElectionAcknowledgment: 'ElectionAcknowledgment',
   ElectionAcknowledgmentItem: 'ElectionAcknowledgmentItem',
   VotingParticipation: 'VotingParticipation',
-  SystemSetting: 'SystemSetting'
+  SystemSetting: 'SystemSetting',
+  CorDocument: 'CorDocument'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -286,6 +287,20 @@ export const SystemSettingScalarFieldEnum = {
 } as const
 
 export type SystemSettingScalarFieldEnum = (typeof SystemSettingScalarFieldEnum)[keyof typeof SystemSettingScalarFieldEnum]
+
+
+export const CorDocumentScalarFieldEnum = {
+  id: 'id',
+  voterId: 'voterId',
+  blobUrl: 'blobUrl',
+  pathname: 'pathname',
+  originalFilename: 'originalFilename',
+  contentType: 'contentType',
+  size: 'size',
+  uploadedAt: 'uploadedAt'
+} as const
+
+export type CorDocumentScalarFieldEnum = (typeof CorDocumentScalarFieldEnum)[keyof typeof CorDocumentScalarFieldEnum]
 
 
 export const SortOrder = {

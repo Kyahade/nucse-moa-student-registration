@@ -126,3 +126,8 @@ export type VotingParticipation = Prisma.VotingParticipationModel
  * 
  */
 export type SystemSetting = Prisma.SystemSettingModel
+/**
+ * Model CorDocument
+ * 
+ */
+export type CorDocument = Prisma.CorDocumentModel

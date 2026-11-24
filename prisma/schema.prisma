@@ -123,9 +123,11 @@ model Voter {
   isAdmin              Boolean                  @default(false)
   programId            Int?
   yearLevel            Int?
+  corDocument CorDocument?
   acknowledgments      ElectionAcknowledgment[]
   program              Program?                 @relation(fields: [programId], references: [id])
   votingParticipations VotingParticipation[]
+  
 }
 
 model Session {
@@ -231,4 +233,17 @@ enum PositionScope {
   UNIVERSITY
   SCHOOL
   COURSE
+}
+
+model CorDocument {
+  id               Int      @id @default(autoincrement())
+  voterId          Int      @unique
+  blobUrl          String
+  pathname         String
+  originalFilename String
+  contentType      String
+  size             Int
+  uploadedAt       DateTime @default(now())
+
+  voter Voter @relation(fields: [voterId], references: [id])
 }

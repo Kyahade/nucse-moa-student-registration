@@ -413,7 +413,8 @@ export const ModelName = {
   ElectionAcknowledgment: 'ElectionAcknowledgment',
   ElectionAcknowledgmentItem: 'ElectionAcknowledgmentItem',
   VotingParticipation: 'VotingParticipation',
-  SystemSetting: 'SystemSetting'
+  SystemSetting: 'SystemSetting',
+  CorDocument: 'CorDocument'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -429,7 +430,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "election" | "college" | "program" | "electionBody" | "electionBodyProgram" | "position" | "politicalTeam" | "candidate" | "voter" | "session" | "ballot" | "ballotSelection" | "emailVerificationCode" | "electionAcknowledgment" | "electionAcknowledgmentItem" | "votingParticipation" | "systemSetting"
+    modelProps: "election" | "college" | "program" | "electionBody" | "electionBodyProgram" | "position" | "politicalTeam" | "candidate" | "voter" | "session" | "ballot" | "ballotSelection" | "emailVerificationCode" | "electionAcknowledgment" | "electionAcknowledgmentItem" | "votingParticipation" | "systemSetting" | "corDocument"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1691,6 +1692,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    CorDocument: {
+      payload: Prisma.$CorDocumentPayload<ExtArgs>
+      fields: Prisma.CorDocumentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CorDocumentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CorDocumentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>
+        }
+        findFirst: {
+          args: Prisma.CorDocumentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CorDocumentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>
+        }
+        findMany: {
+          args: Prisma.CorDocumentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>[]
+        }
+        create: {
+          args: Prisma.CorDocumentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>
+        }
+        createMany: {
+          args: Prisma.CorDocumentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CorDocumentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>[]
+        }
+        delete: {
+          args: Prisma.CorDocumentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>
+        }
+        update: {
+          args: Prisma.CorDocumentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>
+        }
+        deleteMany: {
+          args: Prisma.CorDocumentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CorDocumentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CorDocumentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>[]
+        }
+        upsert: {
+          args: Prisma.CorDocumentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CorDocumentPayload>
+        }
+        aggregate: {
+          args: Prisma.CorDocumentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCorDocument>
+        }
+        groupBy: {
+          args: Prisma.CorDocumentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CorDocumentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CorDocumentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CorDocumentCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1930,6 +2005,20 @@ export const SystemSettingScalarFieldEnum = {
 } as const
 
 export type SystemSettingScalarFieldEnum = (typeof SystemSettingScalarFieldEnum)[keyof typeof SystemSettingScalarFieldEnum]
+
+
+export const CorDocumentScalarFieldEnum = {
+  id: 'id',
+  voterId: 'voterId',
+  blobUrl: 'blobUrl',
+  pathname: 'pathname',
+  originalFilename: 'originalFilename',
+  contentType: 'contentType',
+  size: 'size',
+  uploadedAt: 'uploadedAt'
+} as const
+
+export type CorDocumentScalarFieldEnum = (typeof CorDocumentScalarFieldEnum)[keyof typeof CorDocumentScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -2234,6 +2323,7 @@ export type GlobalOmitConfig = {
   electionAcknowledgmentItem?: Prisma.ElectionAcknowledgmentItemOmit
   votingParticipation?: Prisma.VotingParticipationOmit
   systemSetting?: Prisma.SystemSettingOmit
+  corDocument?: Prisma.CorDocumentOmit
 }
 
 /* Types for Logging */

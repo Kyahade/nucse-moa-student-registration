@@ -256,6 +256,7 @@ export type VoterWhereInput = {
   isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
   programId?: Prisma.IntNullableFilter<"Voter"> | number | null
   yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
+  corDocument?: Prisma.XOR<Prisma.CorDocumentNullableScalarRelationFilter, Prisma.CorDocumentWhereInput> | null
   acknowledgments?: Prisma.ElectionAcknowledgmentListRelationFilter
   program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
   votingParticipations?: Prisma.VotingParticipationListRelationFilter
@@ -271,6 +272,7 @@ export type VoterOrderByWithRelationInput = {
   isAdmin?: Prisma.SortOrder
   programId?: Prisma.SortOrderInput | Prisma.SortOrder
   yearLevel?: Prisma.SortOrderInput | Prisma.SortOrder
+  corDocument?: Prisma.CorDocumentOrderByWithRelationInput
   acknowledgments?: Prisma.ElectionAcknowledgmentOrderByRelationAggregateInput
   program?: Prisma.ProgramOrderByWithRelationInput
   votingParticipations?: Prisma.VotingParticipationOrderByRelationAggregateInput
@@ -289,6 +291,7 @@ export type VoterWhereUniqueInput = Prisma.AtLeast<{
   isAdmin?: Prisma.BoolFilter<"Voter"> | boolean
   programId?: Prisma.IntNullableFilter<"Voter"> | number | null
   yearLevel?: Prisma.IntNullableFilter<"Voter"> | number | null
+  corDocument?: Prisma.XOR<Prisma.CorDocumentNullableScalarRelationFilter, Prisma.CorDocumentWhereInput> | null
   acknowledgments?: Prisma.ElectionAcknowledgmentListRelationFilter
   program?: Prisma.XOR<Prisma.ProgramNullableScalarRelationFilter, Prisma.ProgramWhereInput> | null
   votingParticipations?: Prisma.VotingParticipationListRelationFilter
@@ -334,6 +337,7 @@ export type VoterCreateInput = {
   updatedAt?: Date | string
   isAdmin?: boolean
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentCreateNestedOneWithoutVoterInput
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutVoterInput
   program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutVoterInput
@@ -349,6 +353,7 @@ export type VoterUncheckedCreateInput = {
   isAdmin?: boolean
   programId?: number | null
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentUncheckedCreateNestedOneWithoutVoterInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutVoterInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutVoterInput
 }
@@ -361,6 +366,7 @@ export type VoterUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUpdateOneWithoutVoterNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutVoterNestedInput
   program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutVoterNestedInput
@@ -376,6 +382,7 @@ export type VoterUncheckedUpdateInput = {
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUncheckedUpdateOneWithoutVoterNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutVoterNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutVoterNestedInput
 }
@@ -547,6 +554,20 @@ export type VoterUpdateOneRequiredWithoutVotingParticipationsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.VoterUpdateToOneWithWhereWithoutVotingParticipationsInput, Prisma.VoterUpdateWithoutVotingParticipationsInput>, Prisma.VoterUncheckedUpdateWithoutVotingParticipationsInput>
 }
 
+export type VoterCreateNestedOneWithoutCorDocumentInput = {
+  create?: Prisma.XOR<Prisma.VoterCreateWithoutCorDocumentInput, Prisma.VoterUncheckedCreateWithoutCorDocumentInput>
+  connectOrCreate?: Prisma.VoterCreateOrConnectWithoutCorDocumentInput
+  connect?: Prisma.VoterWhereUniqueInput
+}
+
+export type VoterUpdateOneRequiredWithoutCorDocumentNestedInput = {
+  create?: Prisma.XOR<Prisma.VoterCreateWithoutCorDocumentInput, Prisma.VoterUncheckedCreateWithoutCorDocumentInput>
+  connectOrCreate?: Prisma.VoterCreateOrConnectWithoutCorDocumentInput
+  upsert?: Prisma.VoterUpsertWithoutCorDocumentInput
+  connect?: Prisma.VoterWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.VoterUpdateToOneWithWhereWithoutCorDocumentInput, Prisma.VoterUpdateWithoutCorDocumentInput>, Prisma.VoterUncheckedUpdateWithoutCorDocumentInput>
+}
+
 export type VoterCreateWithoutProgramInput = {
   email: string
   studentId?: string | null
@@ -555,6 +576,7 @@ export type VoterCreateWithoutProgramInput = {
   updatedAt?: Date | string
   isAdmin?: boolean
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentCreateNestedOneWithoutVoterInput
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutVoterInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutVoterInput
 }
@@ -568,6 +590,7 @@ export type VoterUncheckedCreateWithoutProgramInput = {
   updatedAt?: Date | string
   isAdmin?: boolean
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentUncheckedCreateNestedOneWithoutVoterInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutVoterInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutVoterInput
 }
@@ -621,6 +644,7 @@ export type VoterCreateWithoutAcknowledgmentsInput = {
   updatedAt?: Date | string
   isAdmin?: boolean
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentCreateNestedOneWithoutVoterInput
   program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
   votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutVoterInput
 }
@@ -635,6 +659,7 @@ export type VoterUncheckedCreateWithoutAcknowledgmentsInput = {
   isAdmin?: boolean
   programId?: number | null
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentUncheckedCreateNestedOneWithoutVoterInput
   votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutVoterInput
 }
 
@@ -662,6 +687,7 @@ export type VoterUpdateWithoutAcknowledgmentsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUpdateOneWithoutVoterNestedInput
   program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutVoterNestedInput
 }
@@ -676,6 +702,7 @@ export type VoterUncheckedUpdateWithoutAcknowledgmentsInput = {
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUncheckedUpdateOneWithoutVoterNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutVoterNestedInput
 }
 
@@ -687,6 +714,7 @@ export type VoterCreateWithoutVotingParticipationsInput = {
   updatedAt?: Date | string
   isAdmin?: boolean
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentCreateNestedOneWithoutVoterInput
   acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutVoterInput
   program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
 }
@@ -701,6 +729,7 @@ export type VoterUncheckedCreateWithoutVotingParticipationsInput = {
   isAdmin?: boolean
   programId?: number | null
   yearLevel?: number | null
+  corDocument?: Prisma.CorDocumentUncheckedCreateNestedOneWithoutVoterInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutVoterInput
 }
 
@@ -728,6 +757,7 @@ export type VoterUpdateWithoutVotingParticipationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUpdateOneWithoutVoterNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutVoterNestedInput
   program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
 }
@@ -742,7 +772,78 @@ export type VoterUncheckedUpdateWithoutVotingParticipationsInput = {
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUncheckedUpdateOneWithoutVoterNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutVoterNestedInput
+}
+
+export type VoterCreateWithoutCorDocumentInput = {
+  email: string
+  studentId?: string | null
+  hasVoted?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  isAdmin?: boolean
+  yearLevel?: number | null
+  acknowledgments?: Prisma.ElectionAcknowledgmentCreateNestedManyWithoutVoterInput
+  program?: Prisma.ProgramCreateNestedOneWithoutVotersInput
+  votingParticipations?: Prisma.VotingParticipationCreateNestedManyWithoutVoterInput
+}
+
+export type VoterUncheckedCreateWithoutCorDocumentInput = {
+  id?: number
+  email: string
+  studentId?: string | null
+  hasVoted?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  isAdmin?: boolean
+  programId?: number | null
+  yearLevel?: number | null
+  acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedCreateNestedManyWithoutVoterInput
+  votingParticipations?: Prisma.VotingParticipationUncheckedCreateNestedManyWithoutVoterInput
+}
+
+export type VoterCreateOrConnectWithoutCorDocumentInput = {
+  where: Prisma.VoterWhereUniqueInput
+  create: Prisma.XOR<Prisma.VoterCreateWithoutCorDocumentInput, Prisma.VoterUncheckedCreateWithoutCorDocumentInput>
+}
+
+export type VoterUpsertWithoutCorDocumentInput = {
+  update: Prisma.XOR<Prisma.VoterUpdateWithoutCorDocumentInput, Prisma.VoterUncheckedUpdateWithoutCorDocumentInput>
+  create: Prisma.XOR<Prisma.VoterCreateWithoutCorDocumentInput, Prisma.VoterUncheckedCreateWithoutCorDocumentInput>
+  where?: Prisma.VoterWhereInput
+}
+
+export type VoterUpdateToOneWithWhereWithoutCorDocumentInput = {
+  where?: Prisma.VoterWhereInput
+  data: Prisma.XOR<Prisma.VoterUpdateWithoutCorDocumentInput, Prisma.VoterUncheckedUpdateWithoutCorDocumentInput>
+}
+
+export type VoterUpdateWithoutCorDocumentInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutVoterNestedInput
+  program?: Prisma.ProgramUpdateOneWithoutVotersNestedInput
+  votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutVoterNestedInput
+}
+
+export type VoterUncheckedUpdateWithoutCorDocumentInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  studentId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  hasVoted?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  programId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutVoterNestedInput
+  votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutVoterNestedInput
 }
 
 export type VoterCreateManyProgramInput = {
@@ -764,6 +865,7 @@ export type VoterUpdateWithoutProgramInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUpdateOneWithoutVoterNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUpdateManyWithoutVoterNestedInput
   votingParticipations?: Prisma.VotingParticipationUpdateManyWithoutVoterNestedInput
 }
@@ -777,6 +879,7 @@ export type VoterUncheckedUpdateWithoutProgramInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isAdmin?: Prisma.BoolFieldUpdateOperationsInput | boolean
   yearLevel?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  corDocument?: Prisma.CorDocumentUncheckedUpdateOneWithoutVoterNestedInput
   acknowledgments?: Prisma.ElectionAcknowledgmentUncheckedUpdateManyWithoutVoterNestedInput
   votingParticipations?: Prisma.VotingParticipationUncheckedUpdateManyWithoutVoterNestedInput
 }
@@ -842,6 +945,7 @@ export type VoterSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   isAdmin?: boolean
   programId?: boolean
   yearLevel?: boolean
+  corDocument?: boolean | Prisma.Voter$corDocumentArgs<ExtArgs>
   acknowledgments?: boolean | Prisma.Voter$acknowledgmentsArgs<ExtArgs>
   program?: boolean | Prisma.Voter$programArgs<ExtArgs>
   votingParticipations?: boolean | Prisma.Voter$votingParticipationsArgs<ExtArgs>
@@ -888,6 +992,7 @@ export type VoterSelectScalar = {
 
 export type VoterOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "studentId" | "hasVoted" | "createdAt" | "updatedAt" | "isAdmin" | "programId" | "yearLevel", ExtArgs["result"]["voter"]>
 export type VoterInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  corDocument?: boolean | Prisma.Voter$corDocumentArgs<ExtArgs>
   acknowledgments?: boolean | Prisma.Voter$acknowledgmentsArgs<ExtArgs>
   program?: boolean | Prisma.Voter$programArgs<ExtArgs>
   votingParticipations?: boolean | Prisma.Voter$votingParticipationsArgs<ExtArgs>
@@ -903,6 +1008,7 @@ export type VoterIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 export type $VoterPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Voter"
   objects: {
+    corDocument: Prisma.$CorDocumentPayload<ExtArgs> | null
     acknowledgments: Prisma.$ElectionAcknowledgmentPayload<ExtArgs>[]
     program: Prisma.$ProgramPayload<ExtArgs> | null
     votingParticipations: Prisma.$VotingParticipationPayload<ExtArgs>[]
@@ -1311,6 +1417,7 @@ readonly fields: VoterFieldRefs;
  */
 export interface Prisma__VoterClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  corDocument<T extends Prisma.Voter$corDocumentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$corDocumentArgs<ExtArgs>>): Prisma.Prisma__CorDocumentClient<runtime.Types.Result.GetResult<Prisma.$CorDocumentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   acknowledgments<T extends Prisma.Voter$acknowledgmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$acknowledgmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ElectionAcknowledgmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   program<T extends Prisma.Voter$programArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$programArgs<ExtArgs>>): Prisma.Prisma__ProgramClient<runtime.Types.Result.GetResult<Prisma.$ProgramPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   votingParticipations<T extends Prisma.Voter$votingParticipationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Voter$votingParticipationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$VotingParticipationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
@@ -1750,6 +1857,25 @@ export type VoterDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
    * Limit how many Voters to delete.
    */
   limit?: number
+}
+
+/**
+ * Voter.corDocument
+ */
+export type Voter$corDocumentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the CorDocument
+   */
+  select?: Prisma.CorDocumentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the CorDocument
+   */
+  omit?: Prisma.CorDocumentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CorDocumentInclude<ExtArgs> | null
+  where?: Prisma.CorDocumentWhereInput
 }
 
 /**
